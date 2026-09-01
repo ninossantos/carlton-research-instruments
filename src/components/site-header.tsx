@@ -47,8 +47,6 @@ export function SiteHeader() {
               <a
                 key={item.href}
                 href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="shrink-0 py-3 text-sm text-muted hover:text-fg"
               >
                 {item.label}
@@ -80,8 +78,6 @@ export function SiteHeader() {
           </Link>
           <a
             href={CONTACT}
-            target="_blank"
-            rel="noopener noreferrer"
             className="shrink-0 text-sm text-primary underline underline-offset-4 hover:text-fg"
           >
             Request a case review

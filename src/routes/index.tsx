@@ -48,7 +48,7 @@ function Home() {
             Is it coercive control?
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-            Look a behavior up against the literature. Identifying a described behavior does not
+            Look up a behavior against the literature. Identifying a described behavior does not
             establish a pattern and does not establish coercive control.
           </p>
           <p className="mt-4 max-w-2xl text-base text-fg">

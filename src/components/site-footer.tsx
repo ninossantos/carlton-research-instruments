@@ -28,13 +28,10 @@ export function SiteFooter() {
         <p className="max-w-2xl text-sm leading-relaxed text-muted">{globalDisclaimer}</p>
         <nav aria-label="Carlton Research" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
           {practiceNav.map((item) => {
-            const external = item.href.startsWith("http");
             return (
               <a
                 key={item.href}
                 href={item.href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
                 className="text-muted hover:text-fg hover:underline"
               >
                 {item.label}
@@ -47,8 +44,6 @@ export function SiteFooter() {
           <a
             className="text-primary underline underline-offset-4 hover:text-fg"
             href="https://carltonresearch.com/"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             carltonresearch.com
           </a>

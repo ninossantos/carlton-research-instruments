@@ -1,10 +1,19 @@
 export const INSTRUMENT_YEAR = 2026;
 export const PRINCIPAL = "Carlton, C.";
 export const FIRM = "Carlton Research, LLC";
+export const INSTRUMENTS_ORIGIN = "https://instruments.carltonresearch.com";
 
 export function citeInstrument(title: string, path: string, lastReviewed: string) {
   const titleMark = /[.!?]$/.test(title) ? "" : ".";
-  return `${PRINCIPAL} (${INSTRUMENT_YEAR}). ${title}${titleMark} Carlton Research Instruments. ${path}. Last reviewed ${lastReviewed}.`;
+  let url: string;
+  if (/^https?:\/\//i.test(path)) {
+    url = path;
+  } else if (!path || path === "/") {
+    url = `${INSTRUMENTS_ORIGIN}/`;
+  } else {
+    url = `${INSTRUMENTS_ORIGIN}${path.startsWith("/") ? path : `/${path}`}`;
+  }
+  return `${PRINCIPAL} (${INSTRUMENT_YEAR}). ${title}${titleMark} Carlton Research Instruments. ${url}. Last reviewed ${lastReviewed}.`;
 }
 
 export const globalDisclaimer =
