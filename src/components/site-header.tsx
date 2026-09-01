@@ -62,7 +62,7 @@ export function SiteHeader() {
         <div className="flex items-center justify-between gap-4">
           <Link to="/" className="flex min-w-0 items-center gap-[0.65rem] no-underline">
             <img
-              src="/favicon.png"
+              src="/favicon.png?v=20260901d"
               width={40}
               height={40}
               alt=""

@@ -16,7 +16,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 sm:px-8">
         <p className="flex items-center gap-[0.65rem] font-display text-lg text-fg">
           <img
-            src="/favicon.png"
+            src="/favicon.png?v=20260901d"
             width={40}
             height={40}
             alt=""
