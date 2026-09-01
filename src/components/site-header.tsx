@@ -59,10 +59,24 @@ export function SiteHeader() {
       </nav>
 
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 sm:px-8">
-        <div className="flex items-baseline justify-between gap-4">
-          <Link to="/" className="min-w-0">
-            <p className="font-display text-xl tracking-tight text-fg sm:text-2xl">Carlton Research</p>
-            <p className="text-xs uppercase tracking-[0.16em] text-muted">Instruments</p>
+        <div className="flex items-center justify-between gap-4">
+          <Link to="/" className="flex min-w-0 items-center gap-[0.65rem] no-underline">
+            <img
+              src="/favicon.png"
+              width={40}
+              height={40}
+              alt=""
+              decoding="async"
+              className="h-10 w-10 max-h-10 max-w-10 shrink-0 object-contain"
+            />
+            <span className="flex min-w-0 flex-col justify-center leading-[1.15]">
+              <span className="font-display text-[clamp(1rem,2vw,1.15rem)] font-semibold tracking-[0.01em] text-[#1e2d40]">
+                Carlton Research, LLC
+              </span>
+              <span className="mt-[0.12rem] text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary">
+                Instruments
+              </span>
+            </span>
           </Link>
           <a
             href={CONTACT}
