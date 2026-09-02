@@ -29,7 +29,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Carlton Research Observatory: Coercive Control Statute Map, behavior lookup, knowledge test, and literature map.",
+          "Carlton Research Observatory: Coercive Control Statute Map, Coercive Control Law Atlas, Coercive Control Appeals Landscape, Coercive Control Literature Map, Coercive Control Field Check, and Coercive Control Drill.",
       },
       { name: "theme-color", content: "#f3efe6" },
     ],

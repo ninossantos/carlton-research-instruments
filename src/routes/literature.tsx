@@ -9,7 +9,7 @@ function Literature() {
   return (
     <main className="mx-auto w-full max-w-3xl px-5 py-10 sm:px-8">
       <p className="text-xs uppercase tracking-[0.18em] text-muted">Tied to behaviors</p>
-      <h1 className="mt-2 font-display text-4xl tracking-tight">Literature map</h1>
+      <h1 className="mt-2 font-display text-4xl tracking-tight">Coercive Control Literature Map</h1>
       <p className="mt-4 text-lg text-muted">
         Inclusion here is not inclusive of all global peer-reviewed coercive control literature.
       </p>
@@ -43,12 +43,12 @@ function Literature() {
 
       <p className="mt-8 text-sm">
         <Link to="/codebook" className="text-primary hover:underline">
-          Is it coercive control?
+          Coercive Control Field Check
         </Link>
       </p>
       <CiteBlock
         className="mt-6"
-        title="Literature map"
+        title="Coercive Control Literature Map"
         path="/literature"
         lastReviewed="August 31, 2026"
       />

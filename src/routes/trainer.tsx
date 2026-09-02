@@ -56,7 +56,7 @@ function Trainer() {
   return (
     <main className="mx-auto w-full max-w-3xl px-5 py-10 sm:px-8">
       <p className="text-xs uppercase tracking-[0.18em] text-muted">Test your knowledge</p>
-      <h1 className="mt-2 font-display text-4xl tracking-tight">Is this the behavior?</h1>
+      <h1 className="mt-2 font-display text-4xl tracking-tight">Coercive Control Drill</h1>
       <p className="mt-4 text-lg text-muted">
         Choose the best answer for the behavior. A single match does not establish a pattern. Get
         all 67 answers correct and receive a free one-hour remote consultation with Carisa Carlton
@@ -191,13 +191,13 @@ function Trainer() {
 
       <p className="mt-10 text-sm">
         <Link to="/codebook" className="text-primary hover:underline">
-          Is it coercive control?
+          Coercive Control Field Check
         </Link>
       </p>
 
       <CiteBlock
         className="mt-8"
-        title="Is this the behavior?"
+        title="Coercive Control Drill"
         path="/trainer"
         lastReviewed="August 31, 2026"
       />

@@ -14,10 +14,12 @@ const practiceNav = [
 
 const nav = [
   { to: "/observatory", label: "Coercive Control Statute Map" },
-  { to: "/literature", label: "Literature" },
-  { to: "/codebook", label: "Is it coercive control?" },
-  { to: "/trainer", label: "Test Your Knowledge" },
-];
+  { href: "https://tracker.carltonresearch.com/", label: "Coercive Control Law Atlas" },
+  { href: "https://tracker.carltonresearch.com/appeals", label: "Coercive Control Appeals Landscape" },
+  { to: "/literature", label: "Coercive Control Literature Map" },
+  { to: "/codebook", label: "Coercive Control Field Check" },
+  { to: "/trainer", label: "Coercive Control Drill" },
+] as const;
 
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -95,6 +97,17 @@ export function SiteHeader() {
         </div>
         <nav aria-label="Carlton Research Observatory" className="-mx-1 flex gap-1 overflow-x-auto pb-1">
           {nav.map((item) => {
+            if ("href" in item) {
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="shrink-0 rounded-[var(--radius-sm)] px-3 py-2 text-sm text-muted hover:text-fg"
+                >
+                  {item.label}
+                </a>
+              );
+            }
             const active =
               pathname === item.to ||
               pathname.startsWith(`${item.to}/`) ||
