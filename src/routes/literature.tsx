@@ -8,7 +8,7 @@ export const Route = createFileRoute("/literature")({ component: Literature });
 function Literature() {
   return (
     <main className="mx-auto w-full max-w-3xl px-5 py-10 sm:px-8">
-      <p className="text-xs uppercase tracking-[0.18em] text-muted">Tied to behaviors</p>
+      <p className="text-xs uppercase tracking-[0.18em] text-muted">Sources</p>
       <h1 className="mt-2 font-display text-4xl tracking-tight">Coercive Control Literature Map</h1>
       <p className="mt-4 text-lg text-muted">
         Inclusion here is not inclusive of all global peer-reviewed coercive control literature.

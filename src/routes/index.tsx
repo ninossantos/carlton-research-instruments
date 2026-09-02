@@ -24,7 +24,7 @@ const instruments = [
   },
   {
     to: "/literature",
-    name: "Tied to Behaviors",
+    name: "Literature Map",
     kicker: "Sources",
     body: "Pull the peer-reviewed and statutory sources that sit under one behavior family, so the citation trail is in front of you before you argue the pattern.",
   },
