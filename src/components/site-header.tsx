@@ -5,7 +5,7 @@ const CONTACT = "https://carltonresearch.com/contact/";
 
 const practiceNav = [
   { href: "https://carltonresearch.com/", label: "Home" },
-  { to: "/", label: "Carlton Research Observatory", current: true },
+  { to: "/", label: "Coercive Control Observatory", current: true },
   { href: "https://carltonresearch.com/services/", label: "Services" },
   { href: "https://carltonresearch.com/insights/", label: "Insights" },
   { href: "https://carltonresearch.com/about/", label: "About" },
@@ -60,7 +60,7 @@ export function SiteHeader() {
         <div className="flex items-center justify-between gap-4">
           <Link
             to="/"
-            aria-label="Carlton Research Observatory"
+            aria-label="Coercive Control Observatory"
             className="flex min-w-0 items-center gap-[0.65rem] no-underline"
           >
             <img
@@ -95,7 +95,7 @@ export function SiteHeader() {
             </a>
           </div>
         </div>
-        <nav aria-label="Carlton Research Observatory" className="-mx-1 flex gap-1 overflow-x-auto pb-1">
+        <nav aria-label="Coercive Control Observatory" className="-mx-1 flex gap-1 overflow-x-auto pb-1">
           {nav.map((item) => {
             if ("href" in item) {
               return (

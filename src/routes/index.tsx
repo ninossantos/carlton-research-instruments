@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CiteBlock } from "@/components/cite-block";
-import { Disclaimer } from "@/components/disclaimer";
 import { allSubcodes, categories } from "@/lib/data/codes";
 
 export const Route = createFileRoute("/")({ component: Home });
@@ -34,7 +33,7 @@ const instruments = [
     to: "/codebook",
     name: "Coercive Control Field Check",
     kicker: "Look up a behavior",
-    body: `${categories.length} families, ${allSubcodes.length} behaviors drawn from peer-reviewed literature. A match is not a pattern. The page is not a diagnostic checklist.`,
+    body: `${categories.length} families, ${allSubcodes.length} behaviors drawn from peer-reviewed literature. A match is not a pattern.`,
   },
   {
     to: "/trainer",
@@ -50,7 +49,7 @@ function Home() {
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
           <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Carlton Research Observatory
+            Coercive Control Observatory
           </p>
           <h1 className="mt-3 max-w-3xl font-display text-4xl leading-[1.15] tracking-tight text-fg sm:text-5xl">
             Coercive Control Field Check
@@ -102,10 +101,9 @@ function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
-        <Disclaimer behavior />
         <CiteBlock
           className="mt-8"
-          title="Carlton Research Observatory"
+          title="Coercive Control Observatory"
           path="/"
           lastReviewed="August 31, 2026"
         />
