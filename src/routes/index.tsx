@@ -11,13 +11,13 @@ const instruments = [
     body: "A living at-a-glance orientation to national and international coercive control laws by jurisdiction and which U.S. states are still silent on the matter.",
   },
   {
-    href: "https://tracker.carltonresearch.com/",
+    href: "https://carlton-research-law-tracker.pages.dev/",
     name: "Law Atlas",
     kicker: "Statutes",
     body: "Map coercive control statutes and bills across U.S. jurisdictions in a searchable table built from official text, so you can filter the inventory before you brief.",
   },
   {
-    href: "https://tracker.carltonresearch.com/appeals",
+    href: "https://carlton-research-law-tracker.pages.dev/appeals",
     name: "Appeals Landscape",
     kicker: "Appeals",
     body: "Read published appellate opinions that use the phrase coercive control. Follow how courts argue the term, not the case headline.",

@@ -1,4 +1,4 @@
-import { globalDisclaimer, proprietaryFooter } from "@/lib/cite";
+import { proprietaryFooter } from "@/lib/cite";
 
 const practiceNav = [
   { href: "https://carltonresearch.com/", label: "Home" },
@@ -29,7 +29,6 @@ export function SiteFooter() {
           />
           <span>Carlton Research, LLC</span>
         </p>
-        <p className="max-w-2xl text-sm leading-relaxed text-muted">{globalDisclaimer}</p>
         <p className="max-w-2xl text-sm leading-relaxed text-muted">{proprietaryFooter}</p>
         <nav aria-label="Carlton Research" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
           {practiceNav.map((item) => (

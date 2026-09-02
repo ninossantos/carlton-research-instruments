@@ -10,8 +10,7 @@ export function citeInstrument(title: string, path: string, lastReviewed: string
   return `${PRINCIPAL} (${INSTRUMENT_YEAR}). ${title}${titleMark} Coercive Control Observatory. Last reviewed ${lastReviewed}.`;
 }
 
-export const globalDisclaimer =
-  "Not legal advice.";
+export const globalDisclaimer = "";
 
 export const proprietaryFooter =
   "The Coercive Control Observatory is a proprietary product of Carlton Research, LLC. All rights reserved.";

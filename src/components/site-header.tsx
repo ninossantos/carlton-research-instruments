@@ -13,8 +13,8 @@ const practiceNav = [
 
 const nav = [
   { to: "/observatory", label: "Coercive Control Statute Map" },
-  { href: "https://tracker.carltonresearch.com/", label: "Coercive Control Law Atlas" },
-  { href: "https://tracker.carltonresearch.com/appeals", label: "Coercive Control Appeals Landscape" },
+  { href: "https://carlton-research-law-tracker.pages.dev/", label: "Coercive Control Law Atlas" },
+  { href: "https://carlton-research-law-tracker.pages.dev/appeals", label: "Coercive Control Appeals Landscape" },
   { to: "/literature", label: "Coercive Control Literature Map" },
   { to: "/codebook", label: "Coercive Control Field Check" },
   { to: "/trainer", label: "Coercive Control Drill" },
