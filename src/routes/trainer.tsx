@@ -59,8 +59,7 @@ function Trainer() {
       <h1 className="mt-2 font-display text-4xl tracking-tight">Coercive Control Drill</h1>
       <p className="mt-4 text-lg text-muted">
         Choose the best answer for the behavior. A single match does not establish a pattern. Get
-        all 67 answers correct and receive a free one-hour remote consultation with Carisa Carlton
-        worth $250.
+        all 67 answers correct and receive a free one-hour remote consultation with Carisa Carlton.
       </p>
 
       <div
