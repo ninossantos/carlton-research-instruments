@@ -2,7 +2,7 @@ import { globalDisclaimer } from "@/lib/cite";
 
 const practiceNav = [
   { href: "https://carltonresearch.com/", label: "Home" },
-  { href: "/", label: "Carlton Research Observatory" },
+  { href: "/", label: "Coercive Control Observatory" },
   { href: "https://carltonresearch.com/services/", label: "Services" },
   { href: "https://carltonresearch.com/insights/", label: "Insights" },
   { href: "https://carltonresearch.com/about/", label: "About" },
