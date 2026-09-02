@@ -22,7 +22,7 @@ function Dossier() {
         <Link to="/observatory" className="text-primary hover:underline">
           Coercive Control Statute Map
         </Link>
-        <span className="text-faint"> / {j.abbr}</span>
+        {j.abbr !== j.name ? (<span className="text-faint"> / {j.abbr}</span>) : null}
       </p>
       <h1 className="mt-4 font-display text-4xl tracking-tight">{j.name}</h1>
       <div className="mt-4 flex flex-wrap gap-2">

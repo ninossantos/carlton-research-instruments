@@ -431,7 +431,7 @@ export const jurisdictions: Jurisdiction[] = [
   {
     id: "ew",
     name: "England and Wales",
-    abbr: "E&W",
+    abbr: "England and Wales",
     kind: "international",
     region: "International",
     recognition: ["named-criminal"],
