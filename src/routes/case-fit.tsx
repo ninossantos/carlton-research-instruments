@@ -7,7 +7,12 @@ import { getCategory } from "@/lib/data/codes";
 import { jurisdictions } from "@/lib/data/jurisdictions";
 import { floorGuidance } from "@/lib/data/method";
 
-export const Route = createFileRoute("/case-fit")({ component: CaseFit });
+export const Route = createFileRoute("/case-fit")({
+  component: CaseFit,
+  head: () => ({
+    meta: [{ name: "robots", content: "noindex,nofollow" }],
+  }),
+});
 
 const postures = [
   { id: "custody", label: "Custody / parenting-time dispute" },

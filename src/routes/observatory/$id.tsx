@@ -20,7 +20,7 @@ function Dossier() {
     <main className="mx-auto w-full max-w-3xl px-5 py-10 sm:px-8">
       <p className="text-sm">
         <Link to="/observatory" className="text-primary hover:underline">
-          Observatory
+          Coercive Control Statute Map
         </Link>
         <span className="text-faint"> / {j.abbr}</span>
       </p>
@@ -115,7 +115,7 @@ function Dossier() {
 
       <div className="mt-12">
         <CiteBlock
-          title={`Coercive Control Observatory: ${j.name}`}
+          title={`Coercive Control Statute Map: ${j.name}`}
           path={`/observatory/${j.id}`}
           lastReviewed={j.lastReviewed}
         />

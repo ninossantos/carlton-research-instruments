@@ -2,8 +2,7 @@ import { globalDisclaimer } from "@/lib/cite";
 
 const practiceNav = [
   { href: "https://carltonresearch.com/", label: "Home" },
-  { href: "/", label: "Instruments" },
-  { href: "https://tracker.carltonresearch.com/", label: "Coercive Control Trackers" },
+  { href: "/", label: "Carlton Research Observatory" },
   { href: "https://carltonresearch.com/services/", label: "Services" },
   { href: "https://carltonresearch.com/insights/", label: "Insights" },
   { href: "https://carltonresearch.com/about/", label: "About" },
@@ -27,8 +26,7 @@ export function SiteFooter() {
         </p>
         <p className="max-w-2xl text-sm leading-relaxed text-muted">{globalDisclaimer}</p>
         <nav aria-label="Carlton Research" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-          {practiceNav.map((item) => {
-            return (
+          {practiceNav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -36,8 +34,7 @@ export function SiteFooter() {
               >
                 {item.label}
               </a>
-            );
-          })}
+          ))}
         </nav>
         <p className="text-sm text-muted">
           Forensic practice:{" "}
@@ -48,7 +45,7 @@ export function SiteFooter() {
             carltonresearch.com
           </a>
           {" · "}
-          Principal: Carisa Carlton, M.A.
+          Carisa Carlton, CEO Carlton Research, LLC, Coercive Control Forensic Services
         </p>
       </div>
     </footer>
