@@ -71,7 +71,7 @@ function Observatory() {
         {intlJurisdictions().length} international
       </p>
 
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+      <div className="mt-8 flex flex-col gap-4 lg:flex-row lg:items-center">
         <label className="sr-only" htmlFor="obs-search">
           Search jurisdictions
         </label>
@@ -80,16 +80,17 @@ function Observatory() {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search a state, country, or postal code"
-          className="h-12 w-full rounded-[var(--radius-md)] border border-border bg-surface px-4 text-base text-fg placeholder:text-faint sm:max-w-sm"
+          className="relative z-10 h-12 w-full shrink-0 rounded-[var(--radius-md)] border border-border bg-surface px-4 text-base text-fg placeholder:text-faint lg:max-w-sm"
         />
-        <div className="flex flex-wrap gap-1">
+        <div className="relative z-10 flex flex-wrap gap-1" role="group" aria-label="Forum filters">
           {filters.map((f) => (
             <button
               key={f.id}
               type="button"
+              aria-pressed={filter === f.id}
               onClick={() => setFilter(f.id)}
-              className={`h-10 rounded-full px-3 text-sm ${
-                filter === f.id ? "bg-fg text-bg" : "bg-surface-2 text-muted"
+              className={`h-10 cursor-pointer rounded-full px-3.5 text-sm ${
+                filter === f.id ? "bg-fg text-bg" : "bg-surface-2 text-muted hover:text-fg"
               }`}
             >
               {f.label}
@@ -167,16 +168,22 @@ function Observatory() {
 
 function BoardCell({ j, active }: { j: Jurisdiction; active: boolean }) {
   const status = primaryStatus(j);
+  if (!active) {
+    return (
+      <span
+        aria-hidden="true"
+        className="flex h-11 items-center justify-center rounded-[var(--radius-sm)] bg-surface-2/40"
+      />
+    );
+  }
   return (
     <Link
       to="/observatory/$id"
       params={{ id: j.id }}
       title={j.name}
-      aria-disabled={!active}
       className={cn(
-        "flex h-11 items-center justify-center rounded-[var(--radius-sm)] text-sm font-medium tabular-nums transition-opacity duration-150",
+        "flex h-11 items-center justify-center rounded-[var(--radius-sm)] text-sm font-medium tabular-nums",
         chip(status),
-        active ? "opacity-100" : "pointer-events-none opacity-20",
       )}
     >
       {j.abbr}
@@ -186,7 +193,6 @@ function BoardCell({ j, active }: { j: Jurisdiction; active: boolean }) {
 
 function chip(status: Recognition) {
   if (status.startsWith("named")) return "bg-primary text-primary-fg";
-  if (status === "related") return "bg-surface-2 text-related";
-  if (status === "pending") return "bg-surface-2 text-pending";
-  return "bg-surface text-faint shadow-[var(--shadow-border)]";
+  if (status === "related" || status === "pending") return "bg-surface-2 text-related shadow-[var(--shadow-border)]";
+  return "bg-surface-2 text-muted shadow-[var(--shadow-border)]";
 }
