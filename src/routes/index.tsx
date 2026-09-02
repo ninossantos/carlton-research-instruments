@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CiteBlock } from "@/components/cite-block";
-import { allSubcodes, categories } from "@/lib/data/codes";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -9,44 +8,47 @@ const instruments = [
     to: "/observatory",
     name: "What the Law Names",
     kicker: "Statutes",
-    body: "U.S. jurisdictions and key peers abroad. What is named, which behaviors a statute names, and what that does (and does not) mean.",
+    body: "Open the statute that names coercive control in a jurisdiction you care about. See which behaviors the text actually reaches, and where the name stops short of a finding.",
   },
   {
     href: "https://tracker.carltonresearch.com/",
     name: "Law Atlas",
     kicker: "Statutes",
-    body: "Named-term coercive control statutes and bills across U.S. jurisdictions. Official statute text is the source.",
+    body: "Map named-term coercive control statutes and bills across U.S. jurisdictions from the official text, not from a summary someone else wrote.",
   },
   {
     href: "https://tracker.carltonresearch.com/appeals",
     name: "Appeals Landscape",
     kicker: "Appeals",
-    body: "Published appellate decisions that name coercive control. A card is not a holding for every case.",
+    body: "Read how published appellate courts have used the phrase coercive control. Track the argument, not a headline about the outcome.",
   },
   {
     to: "/literature",
     name: "Tied to Behaviors",
     kicker: "Sources",
-    body: "Peer-reviewed and statutory sources tied to a behavior family. Inclusion is not an endorsement of every claim.",
+    body: "Pull the peer-reviewed and statutory sources that sit under one behavior family, so the citation trail is in front of you before you argue the pattern.",
   },
   {
     to: "/codebook",
     name: "Field Check",
     kicker: "Look up a behavior",
-    body: `${categories.length} families, ${allSubcodes.length} behaviors drawn from peer-reviewed literature. A match is not a pattern.`,
+    body: "Look up a described act against 15 families and 59 behaviors drawn from peer-reviewed literature. A hit names a behavior. It does not prove a pattern.",
   },
   {
     to: "/trainer",
     name: "Pattern Drill",
     kicker: "Test your knowledge.",
-    body: "Read a published example. Choose the reading that names the conduct. A match does not establish a pattern.",
+    body: "Work a published example the way you work a record: choose the reading that names the conduct, then reject the near-miss that would not survive cross-examination.",
   },
   {
     href: "https://carltonresearch.com/insights/",
     name: "Insights",
     kicker: "Essays",
-    body: "Practice writing on coercive control from Carlton Research.",
+    body: "Essays from Carlton Research on coercive control pattern analysis, written for use in practice: argument, method, and the record.",
+    span: true,
   },
+];
+
 ];
 
 function Home() {
@@ -90,8 +92,10 @@ function Home() {
         </div>
         <div className="mx-auto mt-6 grid max-w-6xl gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
           {instruments.map((item) => {
+            const spanClass = "span" in item && item.span ? " lg:col-span-2" : "";
             const cardClass =
-              "group bg-surface p-6 transition-colors duration-150 hover:bg-surface-2 sm:p-8";
+              "group bg-surface p-6 transition-colors duration-150 hover:bg-surface-2 sm:p-8" +
+              spanClass;
             const inner = (
               <>
                 <p className="font-mono text-xs text-faint">{item.kicker}</p>
