@@ -498,6 +498,34 @@ export const jurisdictions: Jurisdiction[] = [
     carltonBrief: { title: "NSW and Queensland offenses", href: "https://carltonresearch.com/nsw-queensland-coercive-control/" },
     notes: "Read against NSW. Do not collapse the two drafts.",
   },
+  {
+    id: "ca",
+    name: "Canada",
+    abbr: "CA",
+    kind: "international",
+    region: "International",
+    recognition: ["pending"],
+    statusLabel: "Federal criminal offence enacted; not yet in force",
+    patternLanguage:
+      "Federal only. Bill C-16 (Protecting Victims Act) creates a Criminal Code offence prohibiting a pattern of coercive or controlling conduct toward an intimate partner. Royal Assent 18 June 2026. Justice Canada: the coercive-control provisions come into force no later than two years after Royal Assent to allow training. Enacted is not the same as in force. Separately, the Divorce Act already defines family violence to include coercive and controlling behaviour. That definition is family-law framing, not the criminal offence.",
+    statutes: [
+      {
+        cite: "Protecting Victims Act (Bill C-16), Royal Assent 18 June 2026",
+        year: 2026,
+        note: "Federal criminal pattern offence of coercive or controlling conduct toward an intimate partner. Commencement of the coercive-control offence delayed up to two years after Royal Assent. Source: Justice Canada C-16 page; Parliament of Canada LEGISinfo C-16.",
+      },
+      {
+        cite: "Divorce Act, s. 2(1) (family violence definition)",
+        note: "Includes coercive and controlling behaviour in the family-violence definition. Definitional / family law. Not a standalone criminal offence.",
+      },
+    ],
+    expertStandard: "Canadian criminal and family courts. Not Daubert.",
+    methodFit: FORUM,
+    lastReviewed: "September 2, 2026",
+    confidence: "primary",
+    notes:
+      "Federal frame only. No provincial rows are added without official named-term sources. Do not treat Divorce Act definitional language as the C-16 criminal offence, and do not treat Royal Assent as commencement.",
+  },
 ];
 
 export const recognitionLabels: Record<Recognition, string> = {
