@@ -760,13 +760,262 @@ export function getSubcode(slug: string) {
   return allSubcodes.find((c) => c.slug === s || c.id.toLowerCase() === s);
 }
 
+const STOPWORDS = new Set([
+  "a",
+  "an",
+  "the",
+  "and",
+  "or",
+  "but",
+  "if",
+  "to",
+  "of",
+  "in",
+  "on",
+  "for",
+  "with",
+  "from",
+  "as",
+  "at",
+  "by",
+  "is",
+  "are",
+  "was",
+  "were",
+  "be",
+  "been",
+  "being",
+  "do",
+  "does",
+  "did",
+  "not",
+  "no",
+  "nor",
+  "i",
+  "me",
+  "my",
+  "we",
+  "our",
+  "you",
+  "your",
+  "he",
+  "him",
+  "his",
+  "she",
+  "her",
+  "they",
+  "them",
+  "their",
+  "this",
+  "that",
+  "these",
+  "those",
+  "it",
+  "its",
+  "so",
+  "than",
+  "then",
+  "too",
+  "very",
+  "can",
+  "will",
+  "just",
+  "about",
+  "into",
+  "over",
+  "also",
+  "only",
+  "own",
+  "same",
+  "other",
+  "how",
+  "what",
+  "when",
+  "where",
+  "who",
+  "why",
+  "would",
+  "could",
+  "should",
+  "have",
+  "has",
+  "had",
+  "again",
+  "always",
+  "never",
+  "more",
+  "some",
+  "any",
+  "all",
+]);
+
+const SYNONYMS: Record<string, string[]> = {
+  kid: ["child", "children"],
+  kids: ["child", "children"],
+  coparent: ["parenting", "child", "children", "custody"],
+  coparenting: ["parenting", "child", "children", "custody"],
+  mom: ["mother", "family", "parent", "contact"],
+  mother: ["family", "parent", "contact"],
+  dad: ["father", "family", "parent", "contact"],
+  father: ["family", "parent", "contact"],
+  parents: ["family", "contact"],
+  grandma: ["family", "grandparents"],
+  grandpa: ["family", "grandparents"],
+  friend: ["friends", "contact", "network"],
+  friends: ["friend", "contact", "network"],
+  phone: ["device", "devices", "passwords", "accounts", "communication"],
+  cellphone: ["device", "devices", "phone"],
+  iphone: ["device", "devices", "phone"],
+  password: ["passwords", "accounts", "devices"],
+  passwords: ["password", "accounts", "devices"],
+  instagram: ["platforms", "accounts", "social", "communication"],
+  facebook: ["platforms", "accounts", "social"],
+  snapchat: ["platforms", "accounts", "social"],
+  tiktok: ["platforms", "accounts", "social"],
+  email: ["accounts", "communication"],
+  text: ["messages", "communication", "flooding"],
+  texts: ["messages", "communication", "flooding"],
+  texting: ["messages", "communication", "flooding"],
+  money: ["financial", "finances", "account", "debt", "economic"],
+  bank: ["financial", "account", "finances"],
+  paycheck: ["employment", "earnings", "financial"],
+  salary: ["employment", "earnings", "financial"],
+  job: ["employment", "work"],
+  bills: ["financial", "finances"],
+  credit: ["debt", "financial"],
+  loan: ["debt", "financial"],
+  gps: ["whereabouts", "location", "stalking", "surveillance"],
+  location: ["whereabouts", "stalking"],
+  tracking: ["whereabouts", "surveillance", "stalking"],
+  spy: ["surveillance", "stalking", "devices"],
+  camera: ["surveillance", "stalking"],
+  crazy: ["unstable", "mental", "credibility", "pathologizing"],
+  insane: ["unstable", "mental", "credibility"],
+  bipolar: ["mental", "pathologizing"],
+  gaslight: ["denial", "rewriting", "reality"],
+  gaslighting: ["denial", "rewriting", "reality"],
+  lovebomb: ["affection"],
+  lovebombing: ["affection"],
+  bombing: ["affection"],
+  honeymoon: ["affection", "apology"],
+  sorry: ["apology", "promise"],
+  gun: ["weapon", "firearm", "intimidation"],
+  guns: ["weapon", "firearm", "intimidation"],
+  knife: ["weapon", "intimidation"],
+  kill: ["harm", "threat"],
+  murder: ["harm", "threat"],
+  suicide: ["selfharm", "alive", "threat"],
+  abortion: ["reproductive"],
+  pregnant: ["reproductive"],
+  pregnancy: ["reproductive"],
+  condom: ["reproductive"],
+  pill: ["reproductive", "birth"],
+  sex: ["sexual"],
+  rape: ["sexual", "coercion"],
+  nudes: ["images", "intimate", "photos"],
+  nude: ["images", "intimate", "photos"],
+  porn: ["images", "intimate"],
+  ice: ["immigration"],
+  visa: ["immigration"],
+  deport: ["immigration"],
+  cps: ["authorities", "welfare"],
+  dcs: ["authorities", "welfare"],
+  police: ["cops", "authorities"],
+  cops: ["police", "authorities"],
+  lawyer: ["attorney", "litigation", "court"],
+  attorney: ["lawyer", "litigation", "court"],
+  court: ["litigation", "judge"],
+  judge: ["court", "litigation"],
+  custody: ["child", "children", "parenting"],
+  tro: ["protective", "restraining", "order"],
+  restraining: ["protective", "order"],
+  stalking: ["engineered", "presence", "whereabouts"],
+  following: ["stalking", "presence"],
+  watching: ["stalking", "presence", "whereabouts"],
+  cheating: ["triangulation", "partners"],
+  affair: ["triangulation", "partners"],
+  jealous: ["contact", "friends", "restricting"],
+  fat: ["body", "shaming"],
+  ugly: ["body", "shaming"],
+  stupid: ["insults"],
+  chores: ["housework", "domestic"],
+  diet: ["food", "body"],
+  clothes: ["appearance", "dress"],
+  makeup: ["appearance", "dress"],
+  car: ["movement", "transportation"],
+  keys: ["movement", "transportation"],
+  flooding: ["messages", "communication"],
+  constantly: ["flooding", "repeated"],
+  repeatedly: ["flooding"],
+  smashed: ["destruction", "property", "intimidation"],
+  broke: ["destruction", "property"],
+  dog: ["pets"],
+  cat: ["pets"],
+  pet: ["pets"],
+  go: ["movement"],
+  leave: ["movement", "leave"],
+  out: ["movement"],
+  stay: ["movement", "home"],
+  house: ["home", "movement"],
+  against: ["leverage", "threat", "children"],
+  using: ["leverage", "messengers", "monitors"],
+};
+
+function normalize(s: string) {
+  return s.toLowerCase().replace(/['’]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function tokenize(s: string) {
+  return normalize(s)
+    .split(/\s+/)
+    .filter((t) => t.length >= 2 && !STOPWORDS.has(t));
+}
+
+function tokenHit(hay: Set<string>, token: string) {
+  if (hay.has(token)) return true;
+  if (token.length < 5) return false;
+  for (const h of hay) {
+    if (h.length < 5) continue;
+    const [longer, shorter] = h.length >= token.length ? [h, token] : [token, h];
+    if (longer.startsWith(shorter) && longer.length - shorter.length <= 3) return true;
+  }
+  return false;
+}
+
+const WEAK = new Set([
+  "control",
+  "target",
+  "abuser",
+  "conduct",
+  "behavior",
+  "pattern",
+  "person",
+  "people",
+  "life",
+  "time",
+  "used",
+  "using",
+  "make",
+  "made",
+  "keep",
+  "kept",
+  "against",
+  "see",
+]);
+
 export function searchCodes(q: string) {
-  const query = q.trim().toLowerCase();
-  if (!query) return allSubcodes;
-  return allSubcodes.filter((c) => {
-    const hay = [
-      c.id,
-      c.name,
+  const raw = q.trim();
+  if (!raw) return allSubcodes;
+
+  const queryNorm = normalize(raw);
+  const queryTokens = tokenize(raw);
+  const compactId = queryNorm.replace(/\s+/g, "");
+  const tokensToUse = queryTokens.length ? queryTokens : queryNorm.split(/\s+/).filter(Boolean);
+
+  const scored = allSubcodes.map((c) => {
+    const cat = categories.find((x) => x.id === c.categoryId);
+    const nameHay = `${c.id} ${c.name} ${cat?.name ?? ""} ${cat?.id ?? ""}`;
+    const bodyHay = [
       c.definition,
       c.how,
       c.function,
@@ -774,10 +1023,55 @@ export function searchCodes(q: string) {
       c.why,
       c.example,
       c.citation,
+      cat?.blurb,
+      cat?.literature,
     ]
       .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
-    return hay.includes(query);
+      .join(" ");
+    const nameNorm = normalize(nameHay);
+    const allNorm = `${nameNorm} ${normalize(bodyHay)}`;
+    const nameTokens = new Set(tokenize(nameHay));
+    const allTokens = new Set(tokenize(`${nameHay} ${bodyHay}`));
+
+    let score = 0;
+    let directHits = 0;
+    let anyHits = 0;
+
+    if (c.id.toLowerCase() === compactId || c.slug === compactId) score += 200;
+    if (queryNorm.length >= 3 && nameNorm.includes(queryNorm)) score += 70;
+    else if (queryNorm.length >= 5 && allNorm.includes(queryNorm)) score += 45;
+
+    for (const t of tokensToUse) {
+      const directName = tokenHit(nameTokens, t);
+      const directAll = directName || tokenHit(allTokens, t);
+      const syn = SYNONYMS[t] ?? [];
+      const synName = !directAll && syn.some((v) => tokenHit(nameTokens, v));
+      const synAll = !directAll && (synName || syn.some((v) => tokenHit(allTokens, v)));
+      const weak = WEAK.has(t) ? 0.25 : 1;
+      if (directName) {
+        score += 32 * weak;
+        directHits += 1;
+        anyHits += 1;
+      } else if (directAll) {
+        score += 16 * weak;
+        directHits += 1;
+        anyHits += 1;
+      } else if (synName) {
+        score += 14 * weak;
+        anyHits += 1;
+      } else if (synAll) {
+        score += 6 * weak;
+        anyHits += 1;
+      }
+    }
+
+    if (!anyHits) score = 0;
+    return { c, score, directHits };
   });
+
+  return scored
+    .filter((row) => row.score >= 10)
+    .sort((a, b) => b.score - a.score || b.directHits - a.directHits || a.c.id.localeCompare(b.c.id))
+    .slice(0, 16)
+    .map((row) => row.c);
 }

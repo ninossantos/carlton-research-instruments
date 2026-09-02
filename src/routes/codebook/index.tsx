@@ -25,7 +25,7 @@ function Codebook() {
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="isolation, passwords, for the record, children as messengers…"
+          placeholder="He took my phone, using the children, love bombing"
           className="mt-2 h-12 w-full rounded-[var(--radius-md)] border border-border bg-surface px-4 text-base text-fg placeholder:text-faint"
           autoComplete="off"
         />
@@ -49,8 +49,9 @@ function Codebook() {
           </ul>
           {hits.length === 0 ? (
             <p className="py-8 text-muted">
-              Nothing here matches that phrase. A missed phrase is not a finding that the conduct
-              is not control, and not a finding that the conduct is control.
+              Nothing here matches that wording. Try a shorter cue, such as phone, money, children,
+              or threats. A missed phrase is not a finding that the conduct is not control, and not
+              a finding that the conduct is control.
             </p>
           ) : null}
         </section>
