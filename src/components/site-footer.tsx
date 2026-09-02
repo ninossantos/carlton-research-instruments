@@ -60,8 +60,6 @@ export function SiteFooter() {
           >
             carltonresearch.com
           </a>
-          {" · "}
-          Carisa Carlton, CEO Carlton Research, LLC, Coercive Control Forensic Services
         </p>
       </div>
     </footer>
