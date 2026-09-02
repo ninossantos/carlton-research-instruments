@@ -49,8 +49,6 @@ const instruments = [
   },
 ];
 
-];
-
 function Home() {
   return (
     <main>
