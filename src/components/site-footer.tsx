@@ -4,9 +4,14 @@ const practiceNav = [
   { href: "https://carltonresearch.com/", label: "Home" },
   { href: "/", label: "Coercive Control Observatory" },
   { href: "https://carltonresearch.com/services/", label: "Services" },
-  { href: "https://carltonresearch.com/insights/", label: "Insights" },
   { href: "https://carltonresearch.com/about/", label: "About" },
   { href: "https://carltonresearch.com/contact/", label: "Contact" },
+];
+
+const secondaryNav = [
+  { href: "https://carltonresearch.com/privacy-policy/", label: "Privacy Policy" },
+  { href: "https://carltonresearch.com/terms-of-service/", label: "Terms of Service" },
+  { href: "https://carltonresearch.com/copyright-notice/", label: "Copyright Notice" },
 ];
 
 export function SiteFooter() {
@@ -28,13 +33,24 @@ export function SiteFooter() {
         <p className="max-w-2xl text-sm leading-relaxed text-muted">{proprietaryFooter}</p>
         <nav aria-label="Carlton Research" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
           {practiceNav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-muted hover:text-fg hover:underline"
-              >
-                {item.label}
-              </a>
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-muted hover:text-fg hover:underline"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+          {secondaryNav.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-muted hover:text-fg hover:underline"
+            >
+              {item.label}
+            </a>
           ))}
         </nav>
         <p className="text-sm text-muted">
