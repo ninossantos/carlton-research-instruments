@@ -8,7 +8,7 @@ const instruments = [
     to: "/observatory",
     name: "Statute Map",
     kicker: "Statutes",
-    body: "A living at-a-glance orientation to national and international coercive control laws by jurisdiction and which U.S. states are still silent on the matter.",
+    body: "A living, at-a-glance orientation to national and international coercive control laws by jurisdiction and which U.S. states are still silent on the matter.",
   },
   {
     href: "https://tracker.carltonresearch.com/",
