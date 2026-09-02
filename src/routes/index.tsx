@@ -44,7 +44,7 @@ const instruments = [
     href: "https://carltonresearch.com/insights/",
     name: "Insights",
     kicker: "Essays",
-    body: "Essays from Carlton Research on coercive control pattern analysis, written for use in practice: argument, method, and the record.",
+    body: "Practice writing on coercive control from Carlton Research.",
     span: true,
   },
 ];
