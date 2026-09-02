@@ -64,9 +64,6 @@ function Home() {
             Open a map of the field. Statutes and appeals that use the phrase coercive control,
             literature that frames the conduct, and practice tools for careful reading.
           </p>
-          <p className="mt-4 max-w-2xl text-base text-fg">
-            Carisa Carlton, CEO Carlton Research, LLC, Coercive Control Forensic Services.
-          </p>
           <p className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="https://carltonresearch.com/contact/"
