@@ -52,6 +52,12 @@ export function SiteFooter() {
             </a>
           ))}
         </nav>
+        <div
+          role="separator"
+          aria-hidden="true"
+          className="mt-1 h-px w-full max-w-2xl"
+          style={{ backgroundColor: "#D0A870", opacity: 0.55 }}
+        />
         <p className="text-sm text-muted">
           Forensic practice:{" "}
           <a
