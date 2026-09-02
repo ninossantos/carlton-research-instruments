@@ -6,9 +6,9 @@ export const Route = createFileRoute("/")({ component: Home });
 const instruments = [
   {
     to: "/observatory",
-    name: "What the Law Names",
+    name: "Statute Map",
     kicker: "Statutes",
-    body: "Check the forum before you argue. See whether that jurisdiction’s official text uses coercive control, and how. In England and Wales, the statute language is controlling or coercive behaviour.",
+    body: "A living at-a-glance orientation to national and international coercive control laws by jurisdiction and which U.S. states are still silent on the matter.",
   },
   {
     href: "https://tracker.carltonresearch.com/",
