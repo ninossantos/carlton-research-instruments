@@ -90,7 +90,7 @@ function Home() {
         </div>
         <div className="mx-auto mt-6 grid max-w-6xl gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
           {instruments.map((item) => {
-            const spanClass = "span" in item && item.span ? " lg:col-span-2" : "";
+            const spanClass = "span" in item && item.span ? " sm:col-span-2 lg:col-span-3" : "";
             const cardClass =
               "group bg-surface p-6 transition-colors duration-150 hover:bg-surface-2 sm:p-8" +
               spanClass;
