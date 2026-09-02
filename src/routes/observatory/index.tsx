@@ -176,17 +176,21 @@ function BoardCell({ j, active }: { j: Jurisdiction; active: boolean }) {
       />
     );
   }
+  const intl = j.kind === "international";
   return (
     <Link
       to="/observatory/$id"
       params={{ id: j.id }}
       title={j.name}
       className={cn(
-        "flex h-11 items-center justify-center rounded-[var(--radius-sm)] text-sm font-medium tabular-nums",
+        "flex items-center justify-center rounded-[var(--radius-sm)] px-1 text-center font-medium",
+        intl
+          ? "min-h-11 h-auto py-1.5 text-[0.7rem] leading-tight"
+          : "h-11 text-sm tabular-nums",
         chip(status),
       )}
     >
-      {j.abbr}
+      {intl ? j.name : j.abbr}
     </Link>
   );
 }
