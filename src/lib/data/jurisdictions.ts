@@ -23,14 +23,14 @@ function silentState(id: string, name: string, abbr: string, region: string, ext
     abbr,
     region,
     recognition: ["silent"],
-    statusLabel: "Not independently named",
+    statusLabel: "Not independently in official text",
     patternLanguage:
       "No statute independently naming coercive control was located for this orientation. Domestic-violence, harassment, or stalking provisions may still reach some of the same conduct. That is not the same as a pattern test.",
     statutes: [],
     confidence: "orientation",
     notes:
       extra ||
-      "Silence is not absence of abuse. Silence is absence of a named pattern standard. Pattern analysis can still be offered if the forum's expert rules allow it; the report must not pretend the statute already uses the term.",
+      "Silence is not absence of abuse. Silence is absence of a pattern standard in statute. Pattern analysis can still be offered if the forum's expert rules allow it; the report must not pretend the statute already uses the term.",
   });
 }
 
@@ -41,7 +41,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "AZ",
     region: "West",
     recognition: ["named-custody", "named-civil"],
-    statusLabel: "Named in custody / DV definition (2026)",
+    statusLabel: "Uses phrase in custody / DV definition (2026)",
     patternLanguage:
       "HB 2995 (Alec and Lydia Act, signed June 2026) treats coercive control as a pattern of violent, threatening, coercive, or emotionally abusive conduct, with enumerated tactics including isolation, financial monitoring, surveillance, coerced criminality, and weaponized litigation. Pattern language is statutory. A two-week cluster is not, by itself, the statutory pattern.",
     statutes: [
@@ -49,7 +49,7 @@ export const jurisdictions: Jurisdiction[] = [
     ],
     confidence: "primary",
     carltonBrief: { title: "How Arizona HB 2995 integrates coercive control into family law", href: "https://carltonresearch.com/arizona-hb2995-coercive-control/" },
-    notes: "Deep dossier. Ariz. Rev. Stat. § 25-403.03 (HB 2995) names specific behaviors. Naming them in the statute is not a finding that they are present in a case.",
+    notes: "Deep dossier. Ariz. Rev. Stat. § 25-403.03 (HB 2995) lists specific behaviors. Listing them in the statute is not a finding that they are present in a case.",
   }),
   us({
     id: "us-ca",
@@ -57,7 +57,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "CA",
     region: "West",
     recognition: ["named-po", "named-civil"],
-    statusLabel: "Named in DVRO / Family Code",
+    statusLabel: "Uses phrase in DVRO / Family Code",
     patternLanguage:
       "Fam. Code § 6320(c) defines coercive control as a pattern of behavior that, in purpose or effect, unreasonably interferes with a person's free will and personal liberty. Examples include isolation, deprivation of necessities, controlling movement, and digital monitoring. Pattern is the statutory unit. Expert reliability in California is Sargon, not generic Daubert.",
     statutes: [
@@ -74,7 +74,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "CO",
     region: "West",
     recognition: ["named-civil", "named-po", "named-custody"],
-    statusLabel: "Named; 2026 expert-witness bill",
+    statusLabel: "Uses phrase; 2026 expert-witness bill",
     patternLanguage:
       "Colorado treats coercion / coercive control in family and protection-order settings. HB26-1309 addresses expert-witness standards for coercive-control evidence: the forum is asking for a regime, not an incident. The recurrence floor used in analysis is calibrated to the temporal scope of the records, not a fixed 3×3.",
     statutes: [
@@ -91,7 +91,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "CT",
     region: "Northeast",
     recognition: ["named-civil", "named-po"],
-    statusLabel: "Named: Jennifer's Law",
+    statusLabel: "Uses phrase: Jennifer's Law",
     patternLanguage:
       "Conn. Gen. Stat. § 46b-1(b) (Jennifer's Law) defines coercive control as a pattern of behavior that unreasonably interferes with a person's free will and personal liberty, with a non-exhaustive list including isolation, digital monitoring, economic control, and immigration threats. Not a standalone criminal offense. Pattern is required; a single incident is not the statute.",
     statutes: [
@@ -108,9 +108,9 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "HI",
     region: "West",
     recognition: ["named-po", "named-criminal"],
-    statusLabel: "Named civil; criminalizing path",
+    statusLabel: "Uses phrase in civil; criminalizing path",
     patternLanguage:
-      "Hawaii names coercive control in protective-order law (HRS § 586-1) and has taken the unusual U.S. step of a criminal path. Criminalization shifts what must be proved: a course of conduct, not a discrete assault. That shift is the burden-of-proof problem, not a shortcut to a finding.",
+      "Hawaii uses coercive control in protective-order law (HRS § 586-1) and has taken the unusual U.S. step of a criminal path. Criminalization shifts what must be proved: a course of conduct, not a discrete assault. That shift is the burden-of-proof problem, not a shortcut to a finding.",
     statutes: [
       { cite: "Haw. Rev. Stat. § 586-1", note: "Coercive control in protection-order definitions." },
     ],
@@ -124,9 +124,9 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "WA",
     region: "West",
     recognition: ["named-po"],
-    statusLabel: "Named in protection orders",
+    statusLabel: "Uses phrase in protection orders",
     patternLanguage:
-      "RCW 7.105 names coercive control in the protection-order scheme: a pattern of behavior used to cause fear, decrease, or destroy a person's sense of safety, or to compel or induce a person to engage in conduct from which they have a right to abstain. Pattern is statutory.",
+      "RCW 7.105 uses coercive control in the protection-order scheme: a pattern of behavior used to cause fear, decrease, or destroy a person's sense of safety, or to compel or induce a person to engage in conduct from which they have a right to abstain. Pattern is statutory.",
     statutes: [
       { cite: "Wash. Rev. Code § 7.105.010", note: "Coercive control defined for civil protection orders." },
     ],
@@ -156,7 +156,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "MA",
     region: "Northeast",
     recognition: ["named-po", "named-civil"],
-    statusLabel: "Named in abuse-prevention (2024)",
+    statusLabel: "Uses phrase in abuse-prevention (2024)",
     patternLanguage:
       "H.4744 (signed 2024) defines coercive control as a pattern of behavior intended to threaten, intimidate, harass, isolate, control, coerce, or compel compliance of a family or household member, causing fear of physical harm or a reduced sense of safety or autonomy. Pattern is the unit. 209A is civil.",
     statutes: [
@@ -171,9 +171,9 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "NJ",
     region: "Northeast",
     recognition: ["named-po", "named-civil"],
-    statusLabel: "Named in DV protection orders",
+    statusLabel: "Uses phrase in DV protection orders",
     patternLanguage:
-      "New Jersey names coercive control in the domestic-violence protection-order definition (pattern of behavior intended to intimidate, harass, or control). Animal cruelty was added to the tactic list in 2024. Pattern, not incident.",
+      "New Jersey uses coercive control in the domestic-violence protection-order definition (pattern of behavior intended to intimidate, harass, or control). Animal cruelty was added to the tactic list in 2024. Pattern, not incident.",
     statutes: [
       { cite: "N.J. domestic-violence / protection-order definitions, as amended", note: "Coercive control in the civil DV scheme." },
     ],
@@ -186,7 +186,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "VT",
     region: "Northeast",
     recognition: ["named-civil"],
-    statusLabel: "Named in abuse definition (2024)",
+    statusLabel: "Uses phrase in abuse definition (2024)",
     patternLanguage:
       "Effective July 1, 2024, coercive control is included in Vermont's definition of abuse: a pattern of threatening, humiliating, or intimidating actions used to harm, punish, or frighten. Pattern is statutory.",
     statutes: [
@@ -201,7 +201,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "OK",
     region: "South",
     recognition: ["named-custody"],
-    statusLabel: "Named in custody DV definition",
+    statusLabel: "Uses phrase in custody DV definition",
     patternLanguage:
       "Okla. Stat. tit. 43, § 109 uses 'coercive control' inside the domestic-violence definition that bears on custody. The word is there. The floor is not.",
     statutes: [{ cite: "Okla. Stat. tit. 43, § 109(I)(2)(a)", note: "Coercive control in the custody DV definition." }],
@@ -214,7 +214,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "MS",
     region: "South",
     recognition: ["named-po"],
-    statusLabel: "Named in protective-order definition",
+    statusLabel: "Uses phrase in protective-order definition",
     patternLanguage:
       "Miss. Code § 93-21-125 includes a pattern of behavior or coercive control in the domestic-violence definition used for protective orders.",
     statutes: [{ cite: "Miss. Code Ann. § 93-21-125", note: "Pattern of behavior or coercive control." }],
@@ -242,7 +242,7 @@ export const jurisdictions: Jurisdiction[] = [
     recognition: ["related"],
     statusLabel: "Related: interference with personal liberty",
     patternLanguage:
-      "750 ILCS 60/103 reaches interference with personal liberty. That is a cousin of the California 'free will and personal liberty' formulation, not a named CC statute.",
+      "750 ILCS 60/103 reaches interference with personal liberty. That is a cousin of the California 'free will and personal liberty' formulation, not a coercive control statute.",
     statutes: [{ cite: "750 Ill. Comp. Stat. 60/103", note: "Interference with personal liberty in the IDVA." }],
     confidence: "secondary",
     notes: "Related. Pending CC bills have been filed; they are not law until they are law.",
@@ -311,7 +311,7 @@ export const jurisdictions: Jurisdiction[] = [
       { cite: "Mich. Comp. Laws § 600.1035", note: "Inquiry in mediation." },
     ],
     confidence: "secondary",
-    notes: "Related. Not a full named-CC custody statute.",
+    notes: "Related. Not a full coercive control custody statute.",
   }),
   us({
     id: "us-mo",
@@ -367,7 +367,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "NY",
     region: "Northeast",
     recognition: ["pending"],
-    statusLabel: "Pending / not independently named",
+    statusLabel: "Pending / not independently in official text",
     patternLanguage:
       "No enacted statewide naming located as of this review. Family Court Act and related bills (including 2025-26 proposals) have sought to add coercive control. Pending is not law. Expert standard remains Frye in New York courts unless and until the forum says otherwise.",
     statutes: [],
@@ -381,7 +381,7 @@ export const jurisdictions: Jurisdiction[] = [
     abbr: "MD",
     region: "South",
     recognition: ["pending"],
-    statusLabel: "Pending / not independently named",
+    statusLabel: "Pending / not independently in official text",
     patternLanguage: "Secondary 2026 reporting lists Maryland among jurisdictions considering naming. Not law as of this review.",
     statutes: [],
     confidence: "orientation",
@@ -408,7 +408,7 @@ export const jurisdictions: Jurisdiction[] = [
   silentState("us-tx", "Texas", "TX", "South"),
   silentState("us-ut", "Utah", "UT", "West"),
   silentState("us-va", "Virginia", "VA", "South"),
-  silentState("us-wv", "West Virginia", "WV", "South", "W. Va. Code § 48-27-202 includes psychological abuse in the DV definition. Related conduct may be reached; the term coercive control is not treated as named here."),
+  silentState("us-wv", "West Virginia", "WV", "South", "W. Va. Code § 48-27-202 includes psychological abuse in the DV definition. Related conduct may be reached; the term coercive control is not treated as using the phrase here."),
   silentState("us-wi", "Wisconsin", "WI", "Midwest"),
   silentState("us-wy", "Wyoming", "WY", "West"),
   silentState("us-nm", "New Mexico", "NM", "West"),
@@ -524,7 +524,7 @@ export const jurisdictions: Jurisdiction[] = [
     lastReviewed: "September 2, 2026",
     confidence: "primary",
     notes:
-      "Federal frame only. No provincial rows are added without official named-term sources. Do not treat Divorce Act definitional language as the C-16 criminal offence, and do not treat Royal Assent as commencement.",
+      "Federal frame only. No provincial rows are added without official statute sources. Do not treat Divorce Act definitional language as the C-16 criminal offence, and do not treat Royal Assent as commencement.",
   },
   {
     id: "ie",
@@ -570,7 +570,7 @@ export const jurisdictions: Jurisdiction[] = [
     methodFit: FORUM,
     lastReviewed: "September 2, 2026",
     confidence: "primary",
-    notes: "Uses the UK statutory phrase controlling or coercive behaviour. Named-term under the Carlton Research lock for that phrase.",
+    notes: "Uses the UK statutory phrase controlling or coercive behaviour. Under the Carlton Research lock for that phrase.",
   },
   {
     id: "nz",
@@ -616,7 +616,7 @@ export const jurisdictions: Jurisdiction[] = [
     methodFit: FORUM,
     lastReviewed: "September 2, 2026",
     confidence: "primary",
-    notes: "No Victorian, Western Australian, Tasmanian, ACT, or Northern Territory rows are added without official named-term statute text.",
+    notes: "No Victorian, Western Australian, Tasmanian, ACT, or Northern Territory rows are added without official statute text.",
   },
   {
     id: "nir",
@@ -625,31 +625,31 @@ export const jurisdictions: Jurisdiction[] = [
     kind: "international",
     region: "International",
     recognition: ["related"],
-    statusLabel: "Domestic abuse offence; not scored as named-term coercive control",
+    statusLabel: "Domestic abuse offence; not scored as coercive control",
     patternLanguage:
-      "Domestic Abuse and Civil Proceedings Act (Northern Ireland) 2021 s.1 creates a domestic abuse offence. Official s.1 text does not use coercive control or controlling or coercive behaviour. Related course-of-conduct framing is not treated here as a named-term coercive control statute.",
+      "Domestic Abuse and Civil Proceedings Act (Northern Ireland) 2021 s.1 creates a domestic abuse offence. Official s.1 text does not use coercive control or controlling or coercive behaviour. Related course-of-conduct framing is not treated here as a coercive control statute.",
     statutes: [
       {
         cite: "Domestic Abuse and Civil Proceedings Act (Northern Ireland) 2021 s.1",
         year: 2022,
-        note: "Domestic abuse offence. Not scored as named-term coercive control. Source: legislation.gov.uk.",
+        note: "Domestic abuse offence. Not scored as coercive control. Source: legislation.gov.uk.",
       },
     ],
     expertStandard: "Northern Ireland criminal courts. Not Daubert.",
     methodFit: FORUM,
     lastReviewed: "September 2, 2026",
     confidence: "primary",
-    notes: "Honest not-scored note required by the named-term lock. Do not present Northern Ireland as a coercive control criminalization peer to England and Wales without the statutory words.",
+    notes: "Honest not-scored note required by the statute-term lock. Do not present Northern Ireland as a coercive control criminalization peer to England and Wales without the statutory words.",
   },
 ];
 
 export const recognitionLabels: Record<Recognition, string> = {
-  "named-civil": "Named: civil / family",
-  "named-criminal": "Named: criminal",
-  "named-custody": "Named: custody",
-  "named-po": "Named: protection order",
+  "named-civil": "Uses phrase: civil / family",
+  "named-criminal": "Uses phrase: criminal",
+  "named-custody": "Uses phrase: custody",
+  "named-po": "Uses phrase: protection order",
   related: "Related language",
-  silent: "Not independently named",
+  silent: "Not independently in official text",
   pending: "Pending",
 };
 

@@ -53,7 +53,7 @@ function Dossier() {
           {familiesForForum(j.id).length > 0 ? (
             <div className="mt-6">
               <p className="text-sm leading-relaxed text-muted">
-                {j.statutes[0].cite} names these behaviors. The labels are codes, not statutes.
+                {j.statutes[0].cite} lists these behaviors. The labels are codes, not statutes.
               </p>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {familiesForForum(j.id).map((c) => (
@@ -75,7 +75,7 @@ function Dossier() {
       ) : (
         <section className="mt-10">
           <h2 className="font-display text-2xl">Statutes</h2>
-          <p className="mt-3 text-muted">No independently named statute located for this orientation.</p>
+          <p className="mt-3 text-muted">No independently matching statute located for this orientation.</p>
         </section>
       )}
 

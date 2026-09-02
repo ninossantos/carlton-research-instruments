@@ -8,43 +8,43 @@ const instruments = [
     to: "/observatory",
     name: "What the Law Names",
     kicker: "Statutes",
-    body: "Open the statute that names coercive control in a jurisdiction you care about. See which behaviors the text actually reaches, and where the name stops short of a finding.",
+    body: "Check the forum before you argue. See whether that jurisdiction’s official text uses coercive control, and how. In England and Wales, the statute language is controlling or coercive behaviour.",
   },
   {
     href: "https://tracker.carltonresearch.com/",
     name: "Law Atlas",
     kicker: "Statutes",
-    body: "Map named-term coercive control statutes and bills across U.S. jurisdictions from the official text, not from a summary someone else wrote.",
+    body: "Map coercive control statutes and bills across U.S. jurisdictions in a searchable table built from official text, so you can filter the inventory before you brief.",
   },
   {
     href: "https://tracker.carltonresearch.com/appeals",
     name: "Appeals Landscape",
     kicker: "Appeals",
-    body: "Read how published appellate courts have used the phrase coercive control. Track the argument, not a headline about the outcome.",
+    body: "Read published appellate opinions that use the phrase coercive control. Follow how courts argue the term, not the case headline.",
   },
   {
     to: "/literature",
     name: "Literature Map",
     kicker: "Sources",
-    body: "Pull the peer-reviewed and statutory sources that sit under one behavior family, so the citation trail is in front of you before you argue the pattern.",
+    body: "Open peer-reviewed and statutory sources grouped under one behavior family. Pull the citation trail before you write.",
   },
   {
     to: "/codebook",
     name: "Field Check",
     kicker: "Look up a behavior",
-    body: "Look up a described act against 15 families and 59 behaviors drawn from peer-reviewed literature. A hit names a behavior. It does not prove a pattern.",
+    body: "Look up a described act against 15 families and 59 behaviors drawn from peer-reviewed literature. The tool returns a behavior label. It does not establish a pattern of coercive control.",
   },
   {
     to: "/trainer",
     name: "Pattern Drill",
     kicker: "Test your knowledge.",
-    body: "Work a published example the way you work a record: choose the reading that names the conduct, then reject the near-miss that would not survive cross-examination.",
+    body: "Practice on published examples. Choose the reading that fits the conduct, and set aside the near-miss that sounds close but is wrong.",
   },
   {
     href: "https://carltonresearch.com/insights/",
     name: "Insights",
     kicker: "Essays",
-    body: "Essays from Carlton Research on coercive control pattern analysis, written for use in practice: argument, method, and the record.",
+    body: "Essays from Carlton Research on coercive control pattern analysis for practice: argument, method, and the record.",
     span: true,
   },
 ];
@@ -61,7 +61,7 @@ function Home() {
             Coercive Control Observatory
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-            Open a map of the field. Statutes and appeals that name coercive control,
+            Open a map of the field. Statutes and appeals that use the phrase coercive control,
             literature that frames the conduct, and practice tools for careful reading.
           </p>
           <p className="mt-4 max-w-2xl text-base text-fg">

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/observatory/")({ component: Observatory }
 
 const filters: { id: "all" | "named" | "related" | "silent" | "intl"; label: string }[] = [
   { id: "all", label: "All" },
-  { id: "named", label: "Named" },
+  { id: "named", label: "Uses phrase" },
   { id: "related", label: "Related" },
   { id: "silent", label: "Silent" },
   { id: "intl", label: "International" },
@@ -63,11 +63,11 @@ function Observatory() {
       <p className="text-xs uppercase tracking-[0.18em] text-muted">Forums</p>
       <h1 className="mt-2 font-display text-4xl tracking-tight">Coercive Control Statute Map</h1>
       <p className="mt-4 max-w-2xl text-lg text-muted">
-        A living orientation to what forums name, imply, or omit. Last reviewed August 31, 2026.
+        A living orientation to what forums use in official text, imply, or omit. Last reviewed August 31, 2026.
         Cards marked orientation-only are not for citation as law.
       </p>
       <p className="mt-3 text-sm text-fg">
-        {namedCount} named forums in this build · {usJurisdictions().length} U.S. entries ·{" "}
+        {namedCount} forums that use the phrase in this build · {usJurisdictions().length} U.S. entries ·{" "}
         {intlJurisdictions().length} international
       </p>
 

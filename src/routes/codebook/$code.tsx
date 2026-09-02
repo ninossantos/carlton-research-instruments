@@ -197,7 +197,7 @@ function RelatedLiterature({ familyId }: { familyId: string }) {
               </li>
             ))}
           </ul>
-          <p className="mt-2 text-xs text-faint">A statute that names a tactic is not a finding that the tactic is present.</p>
+          <p className="mt-2 text-xs text-faint">A statute that lists a tactic is not a finding that the tactic is present.</p>
         </div>
       ) : null}
     </section>
