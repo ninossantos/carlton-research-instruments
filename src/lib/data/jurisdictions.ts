@@ -526,6 +526,121 @@ export const jurisdictions: Jurisdiction[] = [
     notes:
       "Federal frame only. No provincial rows are added without official named-term sources. Do not treat Divorce Act definitional language as the C-16 criminal offence, and do not treat Royal Assent as commencement.",
   },
+  {
+    id: "ie",
+    name: "Ireland",
+    abbr: "Ireland",
+    kind: "international",
+    region: "International",
+    recognition: ["named-criminal"],
+    statusLabel: "Criminal offence in force (2019)",
+    patternLanguage:
+      "Domestic Violence Act 2018 s.39 creates a criminal offence of coercive control. In force 1 January 2019. The unit is a course of behaviour, not a single incident.",
+    statutes: [
+      {
+        cite: "Domestic Violence Act 2018 s.39",
+        year: 2019,
+        note: "Criminal offence of coercive control. Source: irishstatutebook.ie.",
+      },
+    ],
+    expertStandard: "Irish criminal courts. Not Daubert.",
+    methodFit: FORUM,
+    lastReviewed: "September 2, 2026",
+    confidence: "primary",
+    notes: "Official text uses coercive control. Criminal product. Do not import proof standards into a U.S. family-law report as if they were the same.",
+  },
+  {
+    id: "gi",
+    name: "Gibraltar",
+    abbr: "Gibraltar",
+    kind: "international",
+    region: "International",
+    recognition: ["named-criminal"],
+    statusLabel: "Criminal offence in force (2023)",
+    patternLanguage:
+      "Domestic Abuse Act 2023 s.3 creates a criminal offence of repeatedly or continuously engaging in controlling or coercive behaviour toward a personally connected person. In force 6 July 2023. Pattern is the offence.",
+    statutes: [
+      {
+        cite: "Domestic Abuse Act 2023 s.3",
+        year: 2023,
+        note: "Controlling or coercive behaviour. Source: gibraltarlaws.gov.gi.",
+      },
+    ],
+    expertStandard: "Gibraltar criminal courts. Not Daubert.",
+    methodFit: FORUM,
+    lastReviewed: "September 2, 2026",
+    confidence: "primary",
+    notes: "Uses the UK statutory phrase controlling or coercive behaviour. Named-term under the Carlton Research lock for that phrase.",
+  },
+  {
+    id: "nz",
+    name: "New Zealand",
+    abbr: "New Zealand",
+    kind: "international",
+    region: "International",
+    recognition: ["named-civil"],
+    statusLabel: "Definitional / family violence (in force); not a standalone crime",
+    patternLanguage:
+      "Family Violence Act 2018 includes coercive or controlling behaviour in the definition of family violence. That inclusion is civil and definitional. The Act does not create a standalone criminal offence of coercive control.",
+    statutes: [
+      {
+        cite: "Family Violence Act 2018 (family-violence definition)",
+        year: 2018,
+        note: "Coercive or controlling behaviour in the family-violence definition. Source: legislation.govt.nz. Not a standalone criminal offence.",
+      },
+    ],
+    expertStandard: "New Zealand family and related civil forums. Not Daubert.",
+    methodFit: FORUM,
+    lastReviewed: "September 2, 2026",
+    confidence: "primary",
+    notes: "Do not count New Zealand in a headline criminal-in-force country total. Definitional naming is not a criminal course-of-conduct offence.",
+  },
+  {
+    id: "sa",
+    name: "South Australia",
+    abbr: "South Australia",
+    kind: "international",
+    region: "International",
+    recognition: ["pending"],
+    statusLabel: "Criminal offence enacted; not yet in force",
+    patternLanguage:
+      "Criminal Law Consolidation (Coercive Control) Amendment Act 2025 (No 35 of 2025) creates a standalone coercive control offence. Commencement is a day fixed by proclamation. Enacted is not the same as in force.",
+    statutes: [
+      {
+        cite: "Criminal Law Consolidation (Coercive Control) Amendment Act 2025 (No 35 of 2025)",
+        year: 2025,
+        note: "Commencement by proclamation (s.2). Source: AustLII numbered Act text. Not scored as in force.",
+      },
+    ],
+    expertStandard: "Australian criminal courts. Not Daubert.",
+    methodFit: FORUM,
+    lastReviewed: "September 2, 2026",
+    confidence: "primary",
+    notes: "No Victorian, Western Australian, Tasmanian, ACT, or Northern Territory rows are added without official named-term statute text.",
+  },
+  {
+    id: "nir",
+    name: "Northern Ireland",
+    abbr: "Northern Ireland",
+    kind: "international",
+    region: "International",
+    recognition: ["related"],
+    statusLabel: "Domestic abuse offence; not scored as named-term coercive control",
+    patternLanguage:
+      "Domestic Abuse and Civil Proceedings Act (Northern Ireland) 2021 s.1 creates a domestic abuse offence. Official s.1 text does not use coercive control or controlling or coercive behaviour. Related course-of-conduct framing is not treated here as a named-term coercive control statute.",
+    statutes: [
+      {
+        cite: "Domestic Abuse and Civil Proceedings Act (Northern Ireland) 2021 s.1",
+        year: 2022,
+        note: "Domestic abuse offence. Not scored as named-term coercive control. Source: legislation.gov.uk.",
+      },
+    ],
+    expertStandard: "Northern Ireland criminal courts. Not Daubert.",
+    methodFit: FORUM,
+    lastReviewed: "September 2, 2026",
+    confidence: "primary",
+    notes: "Honest not-scored note required by the named-term lock. Do not present Northern Ireland as a coercive control criminalization peer to England and Wales without the statutory words.",
+  },
 ];
 
 export const recognitionLabels: Record<Recognition, string> = {
