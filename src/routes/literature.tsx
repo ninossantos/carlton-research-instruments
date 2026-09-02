@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CiteBlock } from "@/components/cite-block";
-import { CodeChip } from "@/components/document-nav";
+import { FamilyPill } from "@/components/document-nav";
 import { literature, literatureKinds } from "@/lib/data/literature";
 
 export const Route = createFileRoute("/literature")({ component: Literature });
@@ -29,7 +29,7 @@ function Literature() {
                     <ul className="mt-3 flex flex-wrap gap-2">
                       {s.families.map((f) => (
                         <li key={f}>
-                          <CodeChip id={f} />
+                          <FamilyPill id={f} />
                         </li>
                       ))}
                     </ul>
