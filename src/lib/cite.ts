@@ -3,17 +3,11 @@ export const PRINCIPAL = "Carlton, C.";
 export const FIRM = "Carlton Research, LLC";
 export const INSTRUMENTS_ORIGIN = "https://instruments.carltonresearch.com";
 
+/** APA-style cite without URL (Carisa, 2026-09-01). path kept for call-site compatibility. */
 export function citeInstrument(title: string, path: string, lastReviewed: string) {
+  void path;
   const titleMark = /[.!?]$/.test(title) ? "" : ".";
-  let url: string;
-  if (/^https?:\/\//i.test(path)) {
-    url = path;
-  } else if (!path || path === "/") {
-    url = `${INSTRUMENTS_ORIGIN}/`;
-  } else {
-    url = `${INSTRUMENTS_ORIGIN}${path.startsWith("/") ? path : `/${path}`}`;
-  }
-  return `${PRINCIPAL} (${INSTRUMENT_YEAR}). ${title}${titleMark} Carlton Research Instruments. ${url}. Last reviewed ${lastReviewed}.`;
+  return `${PRINCIPAL} (${INSTRUMENT_YEAR}). ${title}${titleMark} Carlton Research Instruments. Last reviewed ${lastReviewed}.`;
 }
 
 export const globalDisclaimer =
