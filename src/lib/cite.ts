@@ -13,6 +13,9 @@ export function citeInstrument(title: string, path: string, lastReviewed: string
 export const globalDisclaimer =
   "Not legal advice.";
 
+export const proprietaryFooter =
+  "The Coercive Control Observatory is a proprietary product of Carlton Research, LLC. All rights reserved.";
+
 export const behaviorDisclaimer = "";
 
 export const noUploadDisclaimer =
