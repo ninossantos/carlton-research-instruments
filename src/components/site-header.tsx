@@ -5,8 +5,7 @@ const CONTACT = "https://carltonresearch.com/contact/";
 
 const practiceNav = [
   { href: "https://carltonresearch.com/", label: "Home" },
-  { to: "/", label: "Instruments", current: true },
-  { href: "https://tracker.carltonresearch.com/", label: "Coercive Control Trackers" },
+  { to: "/", label: "Carlton Research Observatory", current: true },
   { href: "https://carltonresearch.com/services/", label: "Services" },
   { href: "https://carltonresearch.com/insights/", label: "Insights" },
   { href: "https://carltonresearch.com/about/", label: "About" },
@@ -14,8 +13,7 @@ const practiceNav = [
 ] as const;
 
 const nav = [
-  { to: "/observatory", label: "Observatory" },
-  { to: "/case-fit", label: "Case-fit" },
+  { to: "/observatory", label: "Coercive Control Statute Map" },
   { to: "/literature", label: "Literature" },
   { to: "/codebook", label: "Is it coercive control?" },
   { to: "/trainer", label: "Test Your Knowledge" },
@@ -58,7 +56,11 @@ export function SiteHeader() {
 
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 sm:px-8">
         <div className="flex items-center justify-between gap-4">
-          <Link to="/" className="flex min-w-0 items-center gap-[0.65rem] no-underline">
+          <Link
+            to="/"
+            aria-label="Carlton Research Observatory"
+            className="flex min-w-0 items-center gap-[0.65rem] no-underline"
+          >
             <img
               src="/favicon.png?v=20260901d"
               width={40}
@@ -72,20 +74,32 @@ export function SiteHeader() {
                 Carlton Research, LLC
               </span>
               <span className="mt-[0.12rem] text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary">
-                Instruments
+                Observatory
               </span>
             </span>
           </Link>
-          <a
-            href={CONTACT}
-            className="shrink-0 text-sm text-primary underline underline-offset-4 hover:text-fg"
-          >
-            Request a case review
-          </a>
+          <div className="flex shrink-0 flex-wrap items-center justify-end gap-x-4 gap-y-1">
+            <Link
+              to="/case-fit"
+              className="text-sm text-muted underline underline-offset-4 hover:text-fg"
+            >
+              Case-fit primer
+            </Link>
+            <a
+              href={CONTACT}
+              className="text-sm text-primary underline underline-offset-4 hover:text-fg"
+            >
+              Request a case review
+            </a>
+          </div>
         </div>
-        <nav aria-label="Instruments" className="-mx-1 flex gap-1 overflow-x-auto pb-1">
+        <nav aria-label="Carlton Research Observatory" className="-mx-1 flex gap-1 overflow-x-auto pb-1">
           {nav.map((item) => {
-            const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
+            const active =
+              pathname === item.to ||
+              pathname.startsWith(`${item.to}/`) ||
+              (item.to === "/observatory" &&
+                (pathname === "/statute-map" || pathname.startsWith("/statute-map/")));
             return (
               <Link
                 key={item.to}

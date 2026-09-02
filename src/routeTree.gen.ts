@@ -19,6 +19,9 @@ import { Route as CodebookIndexRouteImport } from './routes/codebook/index'
 import { Route as CodebookCodeRouteImport } from './routes/codebook/$code'
 import { Route as ObservatoryIndexRouteImport } from './routes/observatory/index'
 import { Route as ObservatoryIdRouteImport } from './routes/observatory/$id'
+import { Route as StatuteMapRouteImport } from './routes/statute-map'
+import { Route as StatuteMapIndexRouteImport } from './routes/statute-map/index'
+import { Route as StatuteMapIdRouteImport } from './routes/statute-map/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -43,6 +46,11 @@ const LiteratureRoute = LiteratureRouteImport.update({
 const ObservatoryRoute = ObservatoryRouteImport.update({
   id: '/observatory',
   path: '/observatory',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StatuteMapRoute = StatuteMapRouteImport.update({
+  id: '/statute-map',
+  path: '/statute-map',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TrainerRoute = TrainerRouteImport.update({
@@ -70,6 +78,16 @@ const ObservatoryIdRoute = ObservatoryIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => ObservatoryRoute,
 } as any)
+const StatuteMapIndexRoute = StatuteMapIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => StatuteMapRoute,
+} as any)
+const StatuteMapIdRoute = StatuteMapIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => StatuteMapRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -77,11 +95,14 @@ export interface FileRoutesByFullPath {
   '/codebook': typeof CodebookRouteWithChildren
   '/literature': typeof LiteratureRoute
   '/observatory': typeof ObservatoryRouteWithChildren
+  '/statute-map': typeof StatuteMapRouteWithChildren
   '/trainer': typeof TrainerRoute
   '/codebook/$code': typeof CodebookCodeRoute
   '/observatory/$id': typeof ObservatoryIdRoute
+  '/statute-map/$id': typeof StatuteMapIdRoute
   '/codebook/': typeof CodebookIndexRoute
   '/observatory/': typeof ObservatoryIndexRoute
+  '/statute-map/': typeof StatuteMapIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -90,8 +111,10 @@ export interface FileRoutesByTo {
   '/trainer': typeof TrainerRoute
   '/codebook/$code': typeof CodebookCodeRoute
   '/observatory/$id': typeof ObservatoryIdRoute
+  '/statute-map/$id': typeof StatuteMapIdRoute
   '/codebook': typeof CodebookIndexRoute
   '/observatory': typeof ObservatoryIndexRoute
+  '/statute-map': typeof StatuteMapIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -100,11 +123,14 @@ export interface FileRoutesById {
   '/codebook': typeof CodebookRouteWithChildren
   '/literature': typeof LiteratureRoute
   '/observatory': typeof ObservatoryRouteWithChildren
+  '/statute-map': typeof StatuteMapRouteWithChildren
   '/trainer': typeof TrainerRoute
   '/codebook/$code': typeof CodebookCodeRoute
   '/observatory/$id': typeof ObservatoryIdRoute
+  '/statute-map/$id': typeof StatuteMapIdRoute
   '/codebook/': typeof CodebookIndexRoute
   '/observatory/': typeof ObservatoryIndexRoute
+  '/statute-map/': typeof StatuteMapIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -114,11 +140,14 @@ export interface FileRouteTypes {
     | '/codebook'
     | '/literature'
     | '/observatory'
+    | '/statute-map'
     | '/trainer'
     | '/codebook/$code'
     | '/observatory/$id'
+    | '/statute-map/$id'
     | '/codebook/'
     | '/observatory/'
+    | '/statute-map/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -127,8 +156,10 @@ export interface FileRouteTypes {
     | '/trainer'
     | '/codebook/$code'
     | '/observatory/$id'
+    | '/statute-map/$id'
     | '/codebook'
     | '/observatory'
+    | '/statute-map'
   id:
     | '__root__'
     | '/'
@@ -136,11 +167,14 @@ export interface FileRouteTypes {
     | '/codebook'
     | '/literature'
     | '/observatory'
+    | '/statute-map'
     | '/trainer'
     | '/codebook/$code'
     | '/observatory/$id'
+    | '/statute-map/$id'
     | '/codebook/'
     | '/observatory/'
+    | '/statute-map/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -149,6 +183,7 @@ export interface RootRouteChildren {
   CodebookRoute: typeof CodebookRouteWithChildren
   LiteratureRoute: typeof LiteratureRoute
   ObservatoryRoute: typeof ObservatoryRouteWithChildren
+  StatuteMapRoute: typeof StatuteMapRouteWithChildren
   TrainerRoute: typeof TrainerRoute
 }
 
@@ -224,6 +259,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ObservatoryIdRouteImport
       parentRoute: typeof ObservatoryRoute
     }
+    '/statute-map': {
+      id: '/statute-map'
+      path: '/statute-map'
+      fullPath: '/statute-map'
+      preLoaderRoute: typeof StatuteMapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/statute-map/': {
+      id: '/statute-map/'
+      path: '/'
+      fullPath: '/statute-map/'
+      preLoaderRoute: typeof StatuteMapIndexRouteImport
+      parentRoute: typeof StatuteMapRoute
+    }
+    '/statute-map/$id': {
+      id: '/statute-map/$id'
+      path: '/$id'
+      fullPath: '/statute-map/$id'
+      preLoaderRoute: typeof StatuteMapIdRouteImport
+      parentRoute: typeof StatuteMapRoute
+    }
   }
 }
 
@@ -255,12 +311,27 @@ const ObservatoryRouteWithChildren = ObservatoryRoute._addFileChildren(
   ObservatoryRouteChildren,
 )
 
+interface StatuteMapRouteChildren {
+  StatuteMapIdRoute: typeof StatuteMapIdRoute
+  StatuteMapIndexRoute: typeof StatuteMapIndexRoute
+}
+
+const StatuteMapRouteChildren: StatuteMapRouteChildren = {
+  StatuteMapIdRoute: StatuteMapIdRoute,
+  StatuteMapIndexRoute: StatuteMapIndexRoute,
+}
+
+const StatuteMapRouteWithChildren = StatuteMapRoute._addFileChildren(
+  StatuteMapRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CaseFitRoute: CaseFitRoute,
   CodebookRoute: CodebookRouteWithChildren,
   LiteratureRoute: LiteratureRoute,
   ObservatoryRoute: ObservatoryRouteWithChildren,
+  StatuteMapRoute: StatuteMapRouteWithChildren,
   TrainerRoute: TrainerRoute,
 }
 export const routeTree = rootRouteImport

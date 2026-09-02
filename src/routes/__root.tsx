@@ -5,13 +5,13 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Carlton Research Instruments";
+const APP_NAME = "Carlton Research Observatory";
 
 function NotFound() {
   return (
     <main className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
       <h1 className="font-display text-3xl">Not in this instrument</h1>
-      <p className="mt-3 text-muted">That page is not part of Carlton Research Instruments.</p>
+      <p className="mt-3 text-muted">That page is not part of Carlton Research Observatory.</p>
       <Link to="/" className="mt-6 inline-block text-primary hover:underline">
         Home
       </Link>
@@ -29,7 +29,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Public instruments for forensic coercive-control analysis: observatory, behavior lookup, case-fit primer, knowledge test, and literature map.",
+          "Carlton Research Observatory: Coercive Control Statute Map, behavior lookup, knowledge test, and literature map.",
       },
       { name: "theme-color", content: "#f3efe6" },
     ],

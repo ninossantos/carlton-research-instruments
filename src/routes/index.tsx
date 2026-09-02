@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({ component: Home });
 const instruments = [
   {
     to: "/observatory",
-    name: "Observatory",
+    name: "Coercive Control Statute Map",
     kicker: "Forums",
     body: "U.S. jurisdictions and key international forums. What is named, which behaviors a statute names, and what that does (and does not) mean.",
   },
@@ -16,13 +16,7 @@ const instruments = [
     to: "/codebook",
     name: "Is it coercive control?",
     kicker: "Look up a behavior",
-    body: `${categories.length} families, ${allSubcodes.length} behaviors drawn from peer-reviewed literature. A match is not a pattern. The page is not a coding manual.`,
-  },
-  {
-    to: "/case-fit",
-    name: "Case-fit primer",
-    kicker: "For counsel",
-    body: "Jurisdiction, posture, span, record types. Whether a forensic evaluation is even a candidate.",
+    body: `${categories.length} families, ${allSubcodes.length} behaviors drawn from peer-reviewed literature. A match is not a pattern. The page is not a diagnostic checklist.`,
   },
   {
     to: "/trainer",
@@ -52,7 +46,7 @@ function Home() {
             establish a pattern and does not establish coercive control.
           </p>
           <p className="mt-4 max-w-2xl text-base text-fg">
-            Principal: Carisa Carlton, M.A., anthropologist and forensic sociologist.
+            Carisa Carlton, CEO Carlton Research, LLC, Coercive Control Forensic Services
           </p>
           <p className="mt-8">
             <Link
@@ -85,7 +79,7 @@ function Home() {
         <Disclaimer behavior />
         <CiteBlock
           className="mt-8"
-          title="Carlton Research Instruments"
+          title="Carlton Research Observatory"
           path="/"
           lastReviewed="August 31, 2026"
         />

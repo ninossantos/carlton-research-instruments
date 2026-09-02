@@ -61,7 +61,7 @@ function Observatory() {
   return (
     <main className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8">
       <p className="text-xs uppercase tracking-[0.18em] text-muted">Forums</p>
-      <h1 className="mt-2 font-display text-4xl tracking-tight">Coercive Control Observatory</h1>
+      <h1 className="mt-2 font-display text-4xl tracking-tight">Coercive Control Statute Map</h1>
       <p className="mt-4 max-w-2xl text-lg text-muted">
         A living orientation to what forums name, imply, or omit. Last reviewed August 31, 2026.
         Cards marked orientation-only are not for citation as law.
@@ -157,7 +157,7 @@ function Observatory() {
 
       <div className="mt-12">
         <CiteBlock
-          title="Coercive Control Observatory"
+          title="Coercive Control Statute Map"
           path="/observatory"
           lastReviewed="August 31, 2026"
         />
