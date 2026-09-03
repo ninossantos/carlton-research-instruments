@@ -213,7 +213,7 @@ function ConsultOffer({ className }: { className?: string }) {
       >
         Book your free one hour consultation with Carisa Carlton
       </a>
-      . Worth $250.
+      .
     </p>
   );
 }
