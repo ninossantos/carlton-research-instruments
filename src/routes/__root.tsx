@@ -60,6 +60,11 @@ export const Route = createRootRoute({
             <SiteFooter />
           </div>
         </AuthProvider>
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token":"b7aa808e4d034424b187a376dbc82233"}'
+        />
         <Scripts />
       </body>
     </html>
