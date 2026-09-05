@@ -18,6 +18,12 @@ export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-border bg-bg">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 sm:px-8">
+        <div
+          role="separator"
+          aria-hidden="true"
+          className="h-px w-full"
+          style={{ backgroundColor: "#D0A870", opacity: 0.55 }}
+        />
         <p className="flex items-center gap-[0.65rem] font-display text-lg text-fg">
           <img
             src="/favicon.png?v=20260901d"

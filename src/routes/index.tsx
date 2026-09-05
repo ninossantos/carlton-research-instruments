@@ -37,14 +37,14 @@ const instruments = [
   {
     to: "/trainer",
     name: "Pattern Drill",
-    kicker: "Test Your Knowledge.",
+    kicker: "Test Your Knowledge",
     body: "Take a 67-question quiz to strengthen your knowledge about what behaviors constitute coercive control. Not hard. You can do it.",
   },
   {
     href: "https://carltonresearch.com/insights/",
     name: "Insights",
     kicker: "Blog",
-    body: "Researched and cited essays on coercive control as it applies to law.",
+    body: "Essays on coercive control.",
     span: true,
   },
 ];

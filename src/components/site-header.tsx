@@ -79,7 +79,7 @@ export function SiteHeader() {
               </span>
             </span>
           </Link>
-          <div className="flex shrink-0 flex-wrap items-center justify-end gap-x-4 gap-y-1">
+          <div className="flex shrink-0 flex-col items-end gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-1">
             <Link
               to="/case-fit"
               className="text-sm text-muted underline underline-offset-4 hover:text-fg"
@@ -94,7 +94,7 @@ export function SiteHeader() {
             </a>
           </div>
         </div>
-        <nav aria-label="Coercive Control Observatory" className="-mx-1 flex gap-1 overflow-x-auto pb-1">
+        <nav aria-label="Coercive Control Observatory" className="-mx-1 flex flex-wrap gap-1 pb-1 sm:flex-nowrap sm:overflow-x-auto">
           {nav.map((item) => {
             if ("href" in item) {
               return (
