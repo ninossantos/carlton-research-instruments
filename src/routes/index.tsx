@@ -81,7 +81,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-surface">
+      <section className="bg-surface">
         <div className="mx-auto max-w-6xl px-5 pt-10 sm:px-8">
           <p className="text-xs uppercase tracking-[0.18em] text-muted">Explore the Observatory</p>
         </div>
