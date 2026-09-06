@@ -16,14 +16,8 @@ const secondaryNav = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-auto border-t border-border bg-bg">
+    <footer className="mt-auto bg-bg">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 sm:px-8">
-        <div
-          role="separator"
-          aria-hidden="true"
-          className="h-px w-full"
-          style={{ backgroundColor: "#D0A870", opacity: 0.55 }}
-        />
         <p className="flex items-center gap-[0.65rem] font-display text-lg text-fg">
           <img
             src="/favicon.png?v=20260901d"
@@ -58,11 +52,12 @@ export function SiteFooter() {
             </a>
           ))}
         </nav>
+        {/* Exactly one gold hairline between footer-one and footer-two */}
         <div
           role="separator"
           aria-hidden="true"
-          className="mt-1 h-px w-full max-w-2xl"
-          style={{ backgroundColor: "#D0A870", opacity: 0.55 }}
+          className="mt-1 h-px w-full"
+          style={{ backgroundColor: "#D0A870" }}
         />
         <p className="text-sm text-muted">
           Forensic practice:{" "}
