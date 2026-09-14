@@ -17,7 +17,7 @@ const SHARE_META_KEYS = new Set([
   "og:image:width",
   "og:image:height",
   "og:type",
-  "og:url",
+  // Keep route-authored og:url (SEO canonical pairing). Platform inject does not re-emit it.
   "og:site_name",
   "twitter:card",
   "twitter:title",
