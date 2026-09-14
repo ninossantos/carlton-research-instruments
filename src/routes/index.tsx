@@ -1,7 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CiteBlock } from "@/components/cite-block";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: 'Coercive Control Observatory' },
+      { property: "og:title", content: 'Coercive Control Observatory' },
+      { property: "og:url", content: 'https://observatory.carltonresearch.com/' },
+      { property: "og:image", content: "https://observatory.carltonresearch.com/og.jpg" },
+    ],
+    links: [{ rel: "canonical", href: 'https://observatory.carltonresearch.com/' }],
+  }),
+  component: Home,
+});
 
 const instruments = [
   {
@@ -81,7 +92,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-surface">
+      <section className="bg-surface">
         <div className="mx-auto max-w-6xl px-5 pt-10 sm:px-8">
           <p className="text-xs uppercase tracking-[0.18em] text-muted">Explore the Observatory</p>
         </div>

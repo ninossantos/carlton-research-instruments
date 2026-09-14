@@ -3,7 +3,18 @@ import { CiteBlock } from "@/components/cite-block";
 import { FamilyPill } from "@/components/document-nav";
 import { literature, literatureKinds } from "@/lib/data/literature";
 
-export const Route = createFileRoute("/literature")({ component: Literature });
+export const Route = createFileRoute("/literature")({
+  head: () => ({
+    meta: [
+      { title: 'Coercive Control Literature Map' },
+      { property: "og:title", content: 'Coercive Control Literature Map' },
+      { property: "og:url", content: 'https://observatory.carltonresearch.com/literature' },
+      { property: "og:image", content: "https://observatory.carltonresearch.com/og.jpg" },
+    ],
+    links: [{ rel: "canonical", href: 'https://observatory.carltonresearch.com/literature' }],
+  }),
+  component: Literature,
+});
 
 function Literature() {
   return (

@@ -50,7 +50,7 @@ export function CiteBlock({
   const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
 
   return (
-    <figure className={cn("border-t border-border pt-5", className)}>
+    <figure className={cn("pt-5", className)}>
       <figcaption className="text-xs uppercase tracking-[0.14em] text-faint">How to cite</figcaption>
       <p className="mt-2 font-display text-base leading-snug text-fg">{text}</p>
       <button

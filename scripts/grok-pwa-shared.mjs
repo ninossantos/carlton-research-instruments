@@ -333,12 +333,22 @@ function applyCustomCardFromFs(site, cwd) {
   return { ...site, card: "custom", image: disk };
 }
 
+export function canonicalHrefFromHtml(html) {
+  const match = String(html ?? "").match(
+    /<link\b[^>]*\brel\s*=\s*["']canonical["'][^>]*>/i,
+  );
+  if (!match) return "";
+  const href = match[0].match(/\bhref\s*=\s*["']([^"']+)["']/i);
+  return href ? String(href[1]).trim() : "";
+}
+
 export function grokOgHeadTags({
   host = "",
   appName = DEFAULT_APP_NAME,
   site = {},
   documentTitle = "",
   cwd = process.cwd(),
+  pageUrl = "",
 } = {}) {
   const title = resolveOgTitle(site, appName, host, documentTitle);
   const publicHost = resolvePublicHost(host);
@@ -354,6 +364,8 @@ export function grokOgHeadTags({
     tags.push(`<meta property="og:type" content="x:game">`);
   }
   if (publicHost) {
+    const ogUrl = String(pageUrl ?? "").trim() || `https://${publicHost}/`;
+    tags.push(`<meta property="og:url" content="${escapeHtml(ogUrl)}">`);
     const asset = resolveOgCardAsset(site, cwd);
     const custom = Boolean(asset);
     let image = custom
@@ -433,6 +445,14 @@ export function injectGrokPwaHead(html, ctx = {}) {
     documentTitle,
   );
   let next = stripShareMetaTags(html);
+  // Canonical is not a share meta; prefer the last document canonical for og:url.
+  const canonicals = [...String(next).matchAll(/<link\b[^>]*\brel\s*=\s*["']canonical["'][^>]*>/gi)];
+  let pageUrl = "";
+  for (const m of canonicals) {
+    const href = m[0].match(/\bhref\s*=\s*["']([^"']+)["']/i);
+    if (href) pageUrl = String(href[1]).trim();
+  }
+  if (!pageUrl) pageUrl = canonicalHrefFromHtml(html);
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
@@ -444,7 +464,7 @@ export function injectGrokPwaHead(html, ctx = {}) {
 
   next = insertAfterHeadOpen(
     next,
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
+    grokOgHeadTags({ host, appName, site, documentTitle, cwd, pageUrl }).join(""),
   );
 
   if (!next.includes("/grok-app-builder/extensions.js")) {
