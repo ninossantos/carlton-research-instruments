@@ -12,7 +12,18 @@ import {
 import type { Jurisdiction, Recognition } from "@/lib/data/types";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/observatory/")({ component: Observatory });
+export const Route = createFileRoute("/observatory/")({
+  head: () => ({
+    meta: [
+      { title: 'Coercive Control Statute Map' },
+      { property: "og:title", content: 'Coercive Control Statute Map' },
+      { property: "og:url", content: 'https://observatory.carltonresearch.com/observatory' },
+      { property: "og:image", content: "https://observatory.carltonresearch.com/og.jpg" },
+    ],
+    links: [{ rel: "canonical", href: 'https://observatory.carltonresearch.com/observatory' }],
+  }),
+  component: Observatory,
+});
 
 const filters: { id: "all" | "named" | "related" | "silent" | "intl"; label: string }[] = [
   { id: "all", label: "All" },

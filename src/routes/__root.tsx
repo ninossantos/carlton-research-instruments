@@ -31,9 +31,21 @@ export const Route = createRootRoute({
         content:
           "Coercive Control Observatory: Coercive Control Statute Map, Coercive Control Law Atlas, Coercive Control Appeals Landscape, Coercive Control Literature Map, Coercive Control Field Check, and Coercive Control Drill.",
       },
+      { property: "og:title", content: APP_NAME },
+      { property: "og:url", content: "https://observatory.carltonresearch.com/" },
+      {
+        property: "og:image",
+        content: "https://observatory.carltonresearch.com/og.jpg",
+      },
+      {
+        property: "og:description",
+        content:
+          "Coercive Control Observatory: Coercive Control Statute Map, Coercive Control Law Atlas, Coercive Control Appeals Landscape, Coercive Control Literature Map, Coercive Control Field Check, and Coercive Control Drill.",
+      },
       { name: "theme-color", content: "#f3efe6" },
     ],
     links: [
+      { rel: "canonical", href: "https://observatory.carltonresearch.com/" },
       { rel: "icon", type: "image/png", href: "/favicon.png?v=20260901d" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },

@@ -5,7 +5,18 @@ import { Button } from "@/components/ui/button";
 import { questions } from "@/lib/data/trainer";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/trainer")({ component: Trainer });
+export const Route = createFileRoute("/trainer")({
+  head: () => ({
+    meta: [
+      { title: 'Coercive Control Drill' },
+      { property: "og:title", content: 'Coercive Control Drill' },
+      { property: "og:url", content: 'https://observatory.carltonresearch.com/trainer' },
+      { property: "og:image", content: "https://observatory.carltonresearch.com/og.jpg" },
+    ],
+    links: [{ rel: "canonical", href: 'https://observatory.carltonresearch.com/trainer' }],
+  }),
+  component: Trainer,
+});
 
 function Trainer() {
   const [active, setActive] = useState(questions[0].id);

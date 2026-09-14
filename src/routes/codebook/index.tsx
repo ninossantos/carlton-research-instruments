@@ -4,7 +4,18 @@ import { CiteBlock } from "@/components/cite-block";
 import { Disclaimer } from "@/components/disclaimer";
 import { CODEBOOK_TITLE, allSubcodes, categories, searchCodes } from "@/lib/data/codes";
 
-export const Route = createFileRoute("/codebook/")({ component: Codebook });
+export const Route = createFileRoute("/codebook/")({
+  head: () => ({
+    meta: [
+      { title: 'Coercive Control Field Check' },
+      { property: "og:title", content: 'Coercive Control Field Check' },
+      { property: "og:url", content: 'https://observatory.carltonresearch.com/codebook' },
+      { property: "og:image", content: "https://observatory.carltonresearch.com/og.jpg" },
+    ],
+    links: [{ rel: "canonical", href: 'https://observatory.carltonresearch.com/codebook' }],
+  }),
+  component: Codebook,
+});
 
 function Codebook() {
   const [q, setQ] = useState("");

@@ -1,7 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CiteBlock } from "@/components/cite-block";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: 'Coercive Control Observatory' },
+      { property: "og:title", content: 'Coercive Control Observatory' },
+      { property: "og:url", content: 'https://observatory.carltonresearch.com/' },
+      { property: "og:image", content: "https://observatory.carltonresearch.com/og.jpg" },
+    ],
+    links: [{ rel: "canonical", href: 'https://observatory.carltonresearch.com/' }],
+  }),
+  component: Home,
+});
 
 const instruments = [
   {

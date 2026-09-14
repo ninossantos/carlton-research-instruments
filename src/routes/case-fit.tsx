@@ -10,7 +10,14 @@ import { floorGuidance } from "@/lib/data/method";
 export const Route = createFileRoute("/case-fit")({
   component: CaseFit,
   head: () => ({
-    meta: [{ name: "robots", content: "noindex,nofollow" }],
+    meta: [
+      { title: "Case-fit primer" },
+      { name: "robots", content: "noindex,nofollow" },
+      { property: "og:title", content: "Case-fit primer" },
+      { property: "og:url", content: "https://observatory.carltonresearch.com/case-fit" },
+      { property: "og:image", content: "https://observatory.carltonresearch.com/og.jpg" },
+    ],
+    links: [{ rel: "canonical", href: "https://observatory.carltonresearch.com/case-fit" }],
   }),
 });
 
