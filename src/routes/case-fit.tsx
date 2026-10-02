@@ -91,8 +91,7 @@ function CaseFit() {
       <p className="text-xs uppercase tracking-[0.18em] text-muted">For counsel</p>
       <h1 className="mt-2 font-display text-4xl tracking-tight">Case-fit primer</h1>
       <p className="mt-4 text-lg text-muted">
-        For attorneys, parties, and evaluators. This does not score a person and does not recommend
-        parenting time. It answers whether a forensic evaluation is even a candidate.
+        For attorneys, parties, and evaluators.
       </p>
 
       <form
@@ -104,7 +103,6 @@ function CaseFit() {
       >
         <fieldset>
           <legend className="font-display text-2xl">Forum</legend>
-          <p className="mt-2 text-sm text-muted">The court that will hear it, not the state you wish had the better statute.</p>
           <select
             className="mt-4 h-12 w-full rounded-[var(--radius-md)] border border-border bg-surface px-3 text-base"
             value={forumId}
@@ -147,10 +145,6 @@ function CaseFit() {
 
         <fieldset>
           <legend className="font-display text-2xl">Temporal span of the records</legend>
-          <p className="mt-2 text-sm text-muted">
-            The floor is calibrated to this number. A two-week file and a two-year file are not the
-            same object.
-          </p>
           <div className="mt-4 grid gap-2">
             {(
               [
@@ -178,7 +172,6 @@ function CaseFit() {
 
         <fieldset>
           <legend className="font-display text-2xl">What already exists</legend>
-          <p className="mt-2 text-sm text-muted">Check what is in hand. Do not collect new surveillance to complete this form.</p>
           <div className="mt-4 grid gap-2">
             {recordOptions.map((r) => (
               <label key={r.id} className="flex min-h-11 cursor-pointer items-center gap-3 rounded-[var(--radius-md)] bg-surface px-3 py-2 shadow-[var(--shadow-border)]">
@@ -191,7 +184,6 @@ function CaseFit() {
 
         <fieldset>
           <legend className="font-display text-2xl">Both parties' communications?</legend>
-          <p className="mt-2 text-sm text-muted">Asymmetry is bidirectional. One export is not the whole file.</p>
           <div className="mt-4 grid gap-2">
             {(
               [
