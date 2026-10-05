@@ -1,49 +1,21 @@
 /**
- * Observatory email signup configuration.
+ * Observatory email signup configuration (HubSpot Forms v3 submission API).
  *
- * The signup form stays OFF until BOTH values below are filled in.
- * While either is empty, the form renders in a disabled "Signups open soon"
- * state and sends no data anywhere.
+ * The form is enabled only when BOTH the portal ID and form GUID are set.
+ * HubSpot form: "Stay Updated on Coercive Control" (region na2).
  *
- * To switch it on, paste the HubSpot portal (Hub) ID and the form GUID of the
- * HubSpot form, confirm the internal property names in SIGNUP_FIELD_NAMES,
- * then rebuild and deploy. Submissions go to the HubSpot Forms Submission API:
- *   https://api.hsforms.com/submissions/v3/integration/submit/{portalId}/{formGuid}
+ * Audience (Legal / Treatment Providers & Evaluators / Individuals) was removed
+ * because the HubSpot form has no Audience property yet, and unknown fields can
+ * cause HubSpot to reject the submission. Re-add the radio group and an
+ * { objectTypeId: "0-1", name: "<audience property>" } field once HubSpot has an
+ * Audience property on this form.
  */
-export const HUBSPOT_PORTAL_ID = "";
-export const HUBSPOT_FORM_GUID = "";
+export const HUBSPOT_PORTAL_ID = "247432344";
+export const HUBSPOT_FORM_GUID = "1705a593-5afd-4d51-8e26-820340fd2433";
 
-/**
- * Optional: HubSpot subscription type IDs, one per audience, so HubSpot
- * records consent and handles unsubscribes. Leave empty to skip
- * legalConsentOptions in the submission.
- */
-export const HUBSPOT_SUBSCRIPTION_TYPE_IDS: Record<AudienceValue, number | null> = {
-  Legal: null,
-  "Treatment Providers & Evaluators": null,
-  Individuals: null,
-};
-
-/** Internal names of the HubSpot properties on the form. Confirm in HubSpot. */
-export const SIGNUP_FIELD_NAMES = {
-  email: "email",
-  firstName: "firstname",
-  lastName: "lastname",
-  firm: "company",
-  audience: "audience",
-  signupSource: "signup_source",
-  signupDate: "signup_date",
-} as const;
-
-export const SIGNUP_SOURCE = "Observatory homepage";
-
-export const AUDIENCE_OPTIONS = [
-  { value: "Legal", label: "Legal", detail: "Attorney, judge, advocate" },
-  { value: "Treatment Providers & Evaluators", label: "Treatment Providers & Evaluators" },
-  { value: "Individuals", label: "Individuals" },
-] as const;
-
-export type AudienceValue = (typeof AUDIENCE_OPTIONS)[number]["value"];
+/** Fixed page context sent with every submission. */
+export const SIGNUP_PAGE_URI = "https://observatory.carltonresearch.com";
+export const SIGNUP_PAGE_NAME = "Observatory";
 
 export const SIGNUP_ENABLED = HUBSPOT_PORTAL_ID.trim() !== "" && HUBSPOT_FORM_GUID.trim() !== "";
 
@@ -52,4 +24,32 @@ export function hubspotSubmitUrl(): string | null {
   return `https://api.hsforms.com/submissions/v3/integration/submit/${encodeURIComponent(
     HUBSPOT_PORTAL_ID.trim(),
   )}/${encodeURIComponent(HUBSPOT_FORM_GUID.trim())}`;
+}
+
+/** HubSpot tracking cookie, if the visitor has one. */
+export function readHutk(): string | undefined {
+  if (typeof document === "undefined") return undefined;
+  const m = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+  return m ? decodeURIComponent(m[1]) : undefined;
+}
+
+type HsField = { objectTypeId: "0-1" | "0-2"; name: string; value: string };
+
+export function buildHubspotPayload(input: {
+  email: string;
+  firstName?: string;
+  lastName?: string;
+  firm?: string;
+  hutk?: string;
+}) {
+  const fields: HsField[] = [
+    { objectTypeId: "0-1", name: "email", value: input.email.trim() },
+    { objectTypeId: "0-1", name: "firstname", value: (input.firstName ?? "").trim() },
+    { objectTypeId: "0-1", name: "lastname", value: (input.lastName ?? "").trim() },
+    // Firm maps to the Company object's name property.
+    { objectTypeId: "0-2", name: "name", value: (input.firm ?? "").trim() },
+  ].filter((f): f is HsField => f.value !== "") as HsField[];
+  const context: Record<string, string> = { pageUri: SIGNUP_PAGE_URI, pageName: SIGNUP_PAGE_NAME };
+  if (input.hutk) context.hutk = input.hutk;
+  return { fields, context };
 }

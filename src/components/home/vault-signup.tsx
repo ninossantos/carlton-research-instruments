@@ -1,12 +1,9 @@
 import { useState, type FormEvent } from "react";
 import {
-  AUDIENCE_OPTIONS,
-  HUBSPOT_SUBSCRIPTION_TYPE_IDS,
   SIGNUP_ENABLED,
-  SIGNUP_FIELD_NAMES,
-  SIGNUP_SOURCE,
+  buildHubspotPayload,
   hubspotSubmitUrl,
-  type AudienceValue,
+  readHutk,
 } from "@/lib/signup-config";
 
 const NAVY = "#1e2d40";
@@ -16,12 +13,6 @@ const TAN = "#dbb28b";
 const WARM = "#f3f0eb";
 
 const EVIDENCE_URL = "https://evidence.carltonresearch.com";
-
-/** HubSpot date properties expect midnight UTC, in milliseconds. */
-function todayUtcMidnight(): string {
-  const d = new Date();
-  return String(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
-}
 
 function EvidenceVaultCard() {
   return (
@@ -114,52 +105,27 @@ const inputClass =
 const labelClass = "mb-1 block text-[0.85rem] font-semibold text-fg";
 
 function SignupCard() {
-  const enabled = SIGNUP_ENABLED;
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const url = hubspotSubmitUrl();
-    // Unconfigured: never send data and never report success.
-    if (!enabled || !url) return;
+    if (!SIGNUP_ENABLED || !url) return;
     const fd = new FormData(e.currentTarget);
     const get = (k: string) => String(fd.get(k) ?? "").trim();
     const email = get("email");
-    const audience = get("audience") as AudienceValue;
-    if (!email || !audience || fd.get("consent") !== "yes") {
-      setError("Please add your email, choose one option, and check the consent box.");
+    if (!email) {
+      setError("Please enter your email address.");
       return;
     }
-    const F = SIGNUP_FIELD_NAMES;
-    const fields = [
-      { name: F.email, value: email },
-      { name: F.firstName, value: get("firstName") },
-      { name: F.lastName, value: get("lastName") },
-      { name: F.firm, value: get("firm") },
-      { name: F.audience, value: audience },
-      { name: F.signupSource, value: get("signupSource") },
-      { name: F.signupDate, value: get("signupDate") },
-    ].filter((f) => f.value !== "");
-    const subId = HUBSPOT_SUBSCRIPTION_TYPE_IDS[audience];
-    const body: Record<string, unknown> = {
-      fields,
-      context: {
-        pageUri: typeof window !== "undefined" ? window.location.href : undefined,
-        pageName: "Coercive Control Observatory",
-      },
-    };
-    if (subId) {
-      body.legalConsentOptions = {
-        consent: {
-          consentToProcess: true,
-          text: "I agree to receive email updates from Carlton Research.",
-          communications: [
-            { value: true, subscriptionTypeId: subId, text: "Email updates from Carlton Research." },
-          ],
-        },
-      };
-    }
+    const body = buildHubspotPayload({
+      email,
+      firstName: get("firstName"),
+      lastName: get("lastName"),
+      firm: get("firm"),
+      hutk: readHutk(),
+    });
     setStatus("sending");
     setError(null);
     try {
@@ -172,7 +138,7 @@ function SignupCard() {
       setStatus("done");
     } catch {
       setStatus("error");
-      setError("Something went wrong. Please try again in a moment.");
+      setError("Sorry, your signup did not go through. Please check your email address and try again.");
     }
   }
 
@@ -180,13 +146,14 @@ function SignupCard() {
     return (
       <div className="h-full rounded-[var(--radius-lg)] border border-border bg-surface p-7 sm:p-8">
         <p className="text-xs uppercase tracking-[0.18em] text-muted">Email updates</p>
-        <h3 className="mt-2 font-display text-[1.6rem] leading-[1.2] text-fg">Thank you.</h3>
-        <p className="mt-2 text-[0.95rem] text-muted">You are on the list.</p>
+        <p className="mt-2 font-display text-[1.6rem] leading-[1.2] text-fg" role="status">
+          Thank you. You're on the list.
+        </p>
       </div>
     );
   }
 
-  const off = !enabled || status === "sending";
+  const off = !SIGNUP_ENABLED || status === "sending";
 
   return (
     <div className="h-full rounded-[var(--radius-lg)] border border-border bg-surface p-7 sm:p-8">
@@ -196,10 +163,9 @@ function SignupCard() {
       </h3>
       <p className="mt-2 text-[0.95rem] text-muted">Carlton Research does not share this list.</p>
 
-      <form className="mt-5 grid gap-4" onSubmit={onSubmit} noValidate={false} aria-disabled={!enabled}>
+      <form className="mt-5 grid gap-4" onSubmit={onSubmit}>
+        {/* Audience question removed until HubSpot has an Audience property on the form (see signup-config.ts). */}
         <fieldset disabled={off} className="grid gap-4">
-          <input type="hidden" name="signupSource" value={SIGNUP_SOURCE} />
-          <input type="hidden" name="signupDate" value={todayUtcMidnight()} />
           <div>
             <label htmlFor="su-email" className={labelClass}>
               Email <span style={{ color: WINE }}>(required)</span>
@@ -222,50 +188,24 @@ function SignupCard() {
           </div>
           <div>
             <label htmlFor="su-firm" className={labelClass}>
-              Firm/Organization
+              Firm
             </label>
             <input id="su-firm" name="firm" type="text" autoComplete="organization" className={inputClass} />
           </div>
-          <div role="radiogroup" aria-labelledby="su-aud-label">
-            <span id="su-aud-label" className={labelClass}>
-              Which best describes you? <span style={{ color: WINE }}>(required, choose one)</span>
-            </span>
-            <div className="grid gap-2">
-              {AUDIENCE_OPTIONS.map((o) => (
-                <label
-                  key={o.value}
-                  className="flex cursor-pointer items-center gap-3 rounded-[var(--radius-sm)] border border-border bg-white px-3 py-2.5 text-[0.95rem] text-fg"
-                >
-                  <input type="radio" name="audience" value={o.value} required className="h-4 w-4 flex-none" style={{ accentColor: WINE }} />
-                  <span>
-                    {o.label}
-                    {"detail" in o && o.detail ? (
-                      <span className="block text-[0.85rem] text-muted">{o.detail}</span>
-                    ) : null}
-                  </span>
-                </label>
-              ))}
-            </div>
-          </div>
-          <label className="flex items-start gap-3 text-[0.9rem] text-muted">
-            <input type="checkbox" name="consent" value="yes" required className="mt-1 h-4 w-4 flex-none" style={{ accentColor: WINE }} />
-            <span>I agree to receive email updates from Carlton Research. I can unsubscribe at any time.</span>
-          </label>
         </fieldset>
-        <div className="flex flex-wrap items-center gap-4">
+        <div>
           <button
             type="submit"
             disabled={off}
             className="inline-flex h-12 items-center justify-center rounded-[var(--radius-md)] px-6 text-[0.95rem] font-semibold disabled:cursor-not-allowed disabled:opacity-60"
             style={{ background: WINE, color: "#fbf8f1" }}
           >
-            {status === "sending" ? "Sending" : "Subscribe"}
+            {status === "sending" ? "Subscribing" : "Subscribe"}
           </button>
-          {!enabled ? (
-            <span className="text-[0.9rem] text-muted" role="status">
-              Signups open soon.
-            </span>
-          ) : null}
+          <p className="mt-3 text-[0.85rem] leading-relaxed text-muted">
+            By subscribing, you agree to receive email updates from Carlton Research. You can
+            unsubscribe at any time.
+          </p>
         </div>
         {error ? (
           <p className="text-[0.9rem]" style={{ color: WINE }} role="alert">
