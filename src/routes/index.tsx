@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CiteBlock } from "@/components/cite-block";
+import { VaultSignupSection } from "@/components/home/vault-signup";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -124,6 +125,8 @@ function Home() {
           })}
         </div>
       </section>
+
+      <VaultSignupSection />
 
       <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <CiteBlock
