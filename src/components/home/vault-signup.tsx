@@ -5,6 +5,7 @@ import {
   hubspotSubmitUrl,
   readHutk,
 } from "@/lib/signup-config";
+import { EVIDENCE_VAULT_URL, VAULT_LIVE } from "@/lib/vault-config";
 
 const NAVY = "#1e2d40";
 const WINE = "#6f2430";
@@ -12,17 +13,41 @@ const GOLD = "#d7a975";
 const TAN = "#dbb28b";
 const WARM = "#f3f0eb";
 
-const EVIDENCE_URL = "https://evidence.carltonresearch.com";
+
+const CARD_BASE = "flex h-full flex-col rounded-[var(--radius-lg)] p-7 sm:p-9";
+const CARD_LINK =
+  " group no-underline shadow-none transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_-12px_rgba(9,10,12,0.55)] focus-visible:outline-solid focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#d7a975]";
+const CTA_BASE = "inline-flex h-12 items-center rounded-[var(--radius-md)] px-6 text-[0.95rem] font-semibold";
+const CTA_LINK =
+  " transition-[filter] duration-150 group-hover:brightness-110 group-hover:underline group-hover:underline-offset-4 group-focus-visible:brightness-110";
 
 function EvidenceVaultCard() {
+  const style = { background: NAVY, color: WARM };
+  const content = <VaultCardContent />;
+  if (VAULT_LIVE) {
+    return (
+      <a
+        href={EVIDENCE_VAULT_URL}
+        aria-label="In Beta Now. Finished Product Launching this Week! Enter the Evidence Vault"
+        aria-describedby="vault-body"
+        className={CARD_BASE + CARD_LINK}
+        style={style}
+      >
+        {content}
+      </a>
+    );
+  }
+  // Not live yet: plain card, no link, no hover, nothing focusable.
   return (
-    <a
-      href={EVIDENCE_URL}
-      aria-label="In Beta Now. Finished Product Launching this Week! Enter the Evidence Vault"
-      aria-describedby="vault-body"
-      className="group flex h-full flex-col rounded-[var(--radius-lg)] p-7 no-underline shadow-none transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_-12px_rgba(9,10,12,0.55)] focus-visible:outline-solid focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#d7a975] sm:p-9"
-      style={{ background: NAVY, color: WARM }}
-    >
+    <div className={CARD_BASE} style={style}>
+      {content}
+    </div>
+  );
+}
+
+function VaultCardContent() {
+  return (
+    <>
       <p className="text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: GOLD }}>
         Evidence Vault
       </p>
@@ -86,19 +111,25 @@ function EvidenceVaultCard() {
         </div>
       </dl>
       <div className="mt-auto pt-7">
-        {/* Visual button only: the whole card is the link (no nested anchors). */}
+        {/* Visual button only (a span, never a link or button). When live, the whole card is the link. */}
         <span
           id="vault-cta"
-          className="inline-flex h-12 items-center rounded-[var(--radius-md)] px-6 text-[0.95rem] font-semibold transition-[filter] duration-150 group-hover:brightness-110 group-hover:underline group-hover:underline-offset-4 group-focus-visible:brightness-110"
+          className={CTA_BASE + (VAULT_LIVE ? CTA_LINK : "")}
           style={{ background: WINE, color: "#fbf8f1", border: `1px solid ${GOLD}` }}
         >
-          Enter the Evidence Vault
-          <span aria-hidden="true" className="ml-2 transition-transform duration-150 group-hover:translate-x-0.5">
-            &rarr;
-          </span>
+          {VAULT_LIVE ? (
+            <>
+              Enter the Evidence Vault
+              <span aria-hidden="true" className="ml-2 transition-transform duration-150 group-hover:translate-x-0.5">
+                &rarr;
+              </span>
+            </>
+          ) : (
+            "Coming This Week"
+          )}
         </span>
       </div>
-    </a>
+    </>
   );
 }
 
