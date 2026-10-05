@@ -162,7 +162,7 @@ function SignupCard() {
       <h3 className="mt-2 font-display text-[1.6rem] leading-[1.2] text-fg">
         Want to stay updated on coercive control?
       </h3>
-      <p className="mt-2 text-[0.95rem] text-muted">Carlton Research does not share this list.</p>
+      <p className="mt-2 text-[0.95rem] text-muted">Carlton Research does not sell or share our contact lists with anyone for any reason.</p>
 
       <form className="mt-5 grid gap-4" onSubmit={onSubmit}>
         {/* Audience question removed until HubSpot has an Audience property on the form (see signup-config.ts). */}
