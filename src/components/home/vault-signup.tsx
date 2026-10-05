@@ -18,7 +18,7 @@ function EvidenceVaultCard() {
   return (
     <a
       href={EVIDENCE_URL}
-      aria-labelledby="vault-heading vault-cta"
+      aria-label="In Beta Now. Finished Product Launching this Week! Enter the Evidence Vault"
       aria-describedby="vault-body"
       className="group flex h-full flex-col rounded-[var(--radius-lg)] p-7 no-underline shadow-none transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_-12px_rgba(9,10,12,0.55)] focus-visible:outline-solid focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#d7a975] sm:p-9"
       style={{ background: NAVY, color: WARM }}
@@ -31,18 +31,20 @@ function EvidenceVaultCard() {
         className="mt-3 font-display text-3xl leading-[1.15] tracking-tight sm:text-[2.1rem]"
         style={{ color: "#fbf8f1" }}
       >
-        In Beta Now! Finished Product Coming this Week!
+        In Beta Now
+        <br />
+        Finished Product Launching this Week!
       </h2>
       <p id="vault-body" className="mt-4 max-w-xl text-[1.05rem] leading-relaxed" style={{ color: WARM }}>
-        Store de-identified documents for each case. A child's first name is replaced on your
-        computer before anything is analyzed. Each document is dated, attributed, excerpted, and
-        coded with the Carlton Research Codebook, then gathered into an evidence report.
+        Soon you will be able to upload your evidence and receive a preliminary report on whether
+        it’s coercive control. Children’s names are deidentified. In addition to your report,
+        you can create an Exhibit Book with a single click. Included with your account fee.
       </p>
       <ul className="mt-5 grid gap-2 text-[0.95rem]" style={{ color: WARM }}>
         {[
-          "Each code comes with the excerpt it relies on.",
-          "Come back and add more documents to the case.",
-          "The report is a coding aid, not a finding.",
+          "Each piece of evidence is scanned for coercive control. Instant report.",
+          "Come back later and add more documents to your file. The Evidence Vault keeps it organized.",
+          "Not a substitute for an expert coder, but Evidence Vault provides deep insights for a fraction of the cost.",
         ].map((t) => (
           <li key={t} className="flex items-start gap-3">
             <span
@@ -77,7 +79,7 @@ function EvidenceVaultCard() {
             <span className="font-display text-2xl" style={{ color: "#fbf8f1" }}>
               $2,359
             </span>{" "}
-            for ten cases
+            manage up to ten cases
           </dd>
         </div>
       </dl>
