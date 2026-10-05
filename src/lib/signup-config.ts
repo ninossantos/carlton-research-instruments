@@ -33,21 +33,18 @@ export function readHutk(): string | undefined {
   return m ? decodeURIComponent(m[1]) : undefined;
 }
 
-type HsField = { objectTypeId: "0-1" | "0-2"; name: string; value: string };
+type HsField = { objectTypeId: "0-1"; name: string; value: string };
 
 export function buildHubspotPayload(input: {
   email: string;
   firstName?: string;
   lastName?: string;
-  firm?: string;
   hutk?: string;
 }) {
   const fields: HsField[] = [
     { objectTypeId: "0-1", name: "email", value: input.email.trim() },
     { objectTypeId: "0-1", name: "firstname", value: (input.firstName ?? "").trim() },
     { objectTypeId: "0-1", name: "lastname", value: (input.lastName ?? "").trim() },
-    // Firm maps to the Company object's name property.
-    { objectTypeId: "0-2", name: "name", value: (input.firm ?? "").trim() },
   ].filter((f): f is HsField => f.value !== "") as HsField[];
   const context: Record<string, string> = { pageUri: SIGNUP_PAGE_URI, pageName: SIGNUP_PAGE_NAME };
   if (input.hutk) context.hutk = input.hutk;

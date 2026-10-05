@@ -125,7 +125,6 @@ function SignupCard() {
       email,
       firstName: get("firstName"),
       lastName: get("lastName"),
-      firm: get("firm"),
       hutk: readHutk(),
     });
     setStatus("sending");
@@ -187,12 +186,6 @@ function SignupCard() {
               </label>
               <input id="su-last" name="lastName" type="text" autoComplete="family-name" className={inputClass} />
             </div>
-          </div>
-          <div>
-            <label htmlFor="su-firm" className={labelClass}>
-              Firm
-            </label>
-            <input id="su-firm" name="firm" type="text" autoComplete="organization" className={inputClass} />
           </div>
         </fieldset>
         <div>
