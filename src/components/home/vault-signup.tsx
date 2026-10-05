@@ -33,7 +33,9 @@ function EvidenceVaultCard() {
       >
         In Beta Now
         <br />
-        Finished Product Launching this Week!
+        <span className="inline-block pt-1 text-[0.5em] leading-[1.25]">
+          Finished Product Launching this Week!
+        </span>
       </h2>
       <p id="vault-body" className="mt-4 max-w-xl text-[1.05rem] leading-relaxed" style={{ color: WARM }}>
         Soon you will be able to upload your evidence and receive a preliminary report on whether
