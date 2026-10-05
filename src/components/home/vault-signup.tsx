@@ -198,8 +198,7 @@ function SignupCard() {
             {status === "sending" ? "Subscribing" : "Subscribe"}
           </button>
           <p className="mt-3 text-[0.85rem] leading-relaxed text-muted">
-            By subscribing, you agree to receive email updates from Carlton Research. You can
-            unsubscribe at any time.
+            We will only send you important updates, no boring newsletters or sales pitches.
           </p>
         </div>
         {error ? (
