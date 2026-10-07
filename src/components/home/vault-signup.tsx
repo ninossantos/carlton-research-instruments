@@ -49,7 +49,7 @@ function EvidenceVaultCard() {
 function VaultCardContent() {
   return (
     <>
-      <p className="text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: GOLD }}>
+      <p className="text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: "#ffffff" }}>
         New Product
       </p>
       <h2
@@ -59,7 +59,7 @@ function VaultCardContent() {
       >
         Evidence Vault
         <br />
-        <span className="inline-block pt-1 text-[0.5em] font-bold leading-[1.25]">
+        <span className="inline-block pt-1 text-[0.5em] font-bold leading-[1.25]" style={{ color: WINE }}>
           Live Now
         </span>
       </h2>
