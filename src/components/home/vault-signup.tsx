@@ -29,7 +29,7 @@ function EvidenceVaultCard() {
     return (
       <a
         href={EVIDENCE_VAULT_URL}
-        aria-label="New Product. Live Now. Enter the Evidence Vault"
+        aria-label="Evidence Vault. Live Now. Enter the Evidence Vault"
         aria-describedby="vault-body"
         className={CARD_BASE + CARD_LINK}
         style={style}
@@ -50,16 +50,16 @@ function VaultCardContent() {
   return (
     <>
       <p className="text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: GOLD }}>
-        Evidence Vault
+        New Product
       </p>
       <h2
         id="vault-heading"
-        className="mt-3 font-display text-3xl leading-[1.15] tracking-tight sm:text-[2.1rem]"
-        style={{ color: "#fbf8f1" }}
+        className="mt-3 font-display text-3xl font-bold leading-[1.15] tracking-tight sm:text-[2.1rem]"
+        style={{ color: GOLD }}
       >
-        New Product
+        Evidence Vault
         <br />
-        <span className="inline-block pt-1 text-[0.5em] leading-[1.25]">
+        <span className="inline-block pt-1 text-[0.5em] font-bold leading-[1.25]">
           Live Now
         </span>
       </h2>
