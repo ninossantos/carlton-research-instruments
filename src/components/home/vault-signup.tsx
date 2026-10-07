@@ -175,7 +175,7 @@ function SignupCard() {
 
   if (status === "done") {
     return (
-      <div className="h-full rounded-[var(--radius-lg)] border border-border bg-surface p-7 sm:p-8">
+      <div className="h-full rounded-[var(--radius-lg)] border border-border bg-surface p-7 transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_-12px_rgba(9,10,12,0.55)] sm:p-8">
         <p className="text-xs uppercase tracking-[0.18em] text-muted">Email updates</p>
         <p className="mt-2 font-display text-[1.6rem] leading-[1.2] text-fg" role="status">
           Thank you. You're on the list.
@@ -187,7 +187,7 @@ function SignupCard() {
   const off = !SIGNUP_ENABLED || status === "sending";
 
   return (
-    <div className="h-full rounded-[var(--radius-lg)] border border-border bg-surface p-7 sm:p-8">
+    <div className="h-full rounded-[var(--radius-lg)] border border-border bg-surface p-7 transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_-12px_rgba(9,10,12,0.55)] sm:p-8">
       <p className="text-xs uppercase tracking-[0.18em] text-muted">Email updates</p>
       <h3 className="mt-2 font-display text-[1.6rem] leading-[1.2] text-fg">
         Want to stay updated on coercive control?
