@@ -29,7 +29,7 @@ function EvidenceVaultCard() {
     return (
       <a
         href={EVIDENCE_VAULT_URL}
-        aria-label="Evidence Vault. Live Now. Enter the Evidence Vault"
+        aria-label="Evidence Vault. Enter the Evidence Vault"
         aria-describedby="vault-body"
         className={CARD_BASE + CARD_LINK}
         style={style}
@@ -58,10 +58,6 @@ function VaultCardContent() {
         style={{ color: GOLD }}
       >
         Evidence Vault
-        <br />
-        <span className="inline-block pt-1 text-[0.5em] font-bold leading-[1.25]" style={{ color: WINE }}>
-          Live Now
-        </span>
       </h2>
       <p id="vault-body" className="mt-4 max-w-xl text-[1.05rem] leading-relaxed" style={{ color: WARM }}>
         Upload your evidence and receive a preliminary report on whether it’s coercive control.
