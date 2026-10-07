@@ -6,6 +6,6 @@
  * true: the whole card links to EVIDENCE_VAULT_URL and the button reads
  *   "Enter the Evidence Vault" with an arrow.
  */
-export const VAULT_LIVE = false;
+export const VAULT_LIVE = true;
 
 export const EVIDENCE_VAULT_URL = "https://evidence.carltonresearch.com";
