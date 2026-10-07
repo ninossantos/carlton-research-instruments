@@ -28,7 +28,7 @@ function EvidenceVaultCard() {
     return (
       <a
         href={EVIDENCE_VAULT_URL}
-        aria-label="In Beta Now. Finished Product Launching this Week! Enter the Evidence Vault"
+        aria-label="New Product. Live Now. Enter the Evidence Vault"
         aria-describedby="vault-body"
         className={CARD_BASE + CARD_LINK}
         style={style}
@@ -56,22 +56,22 @@ function VaultCardContent() {
         className="mt-3 font-display text-3xl leading-[1.15] tracking-tight sm:text-[2.1rem]"
         style={{ color: "#fbf8f1" }}
       >
-        In Beta Now
+        New Product
         <br />
         <span className="inline-block pt-1 text-[0.5em] leading-[1.25]">
-          Finished Product Launching this Week!
+          Live Now
         </span>
       </h2>
       <p id="vault-body" className="mt-4 max-w-xl text-[1.05rem] leading-relaxed" style={{ color: WARM }}>
-        Soon you will be able to upload your evidence and receive a preliminary report on whether
-        it’s coercive control. Children’s names are deidentified. In addition to your report,
-        you can create an Exhibit Book with a single click. Included with your account fee.
+        Upload your evidence and receive a preliminary report on whether it’s coercive control.
+        Children’s names are deidentified. In addition to your report, you can create an Exhibit
+        Book with a single click. Included with your account fee.
       </p>
       <ul className="mt-5 grid gap-2 text-[0.95rem]" style={{ color: WARM }}>
         {[
-          "Each piece of evidence is scanned for coercive control. Instant report.",
+          "Each piece of your evidence is scanned for coercive control. Instant report.",
           "Come back later and add more documents to your file. The Evidence Vault keeps it organized.",
-          "Not a substitute for an expert coder, but Evidence Vault provides deep insights for a fraction of the cost.",
+          "Not a substitute for an expert analyst or attorney, but Evidence Vault provides deep insights for a fraction of the cost.",
         ].map((t) => (
           <li key={t} className="flex items-start gap-3">
             <span
