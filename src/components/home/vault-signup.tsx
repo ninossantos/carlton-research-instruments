@@ -16,10 +16,11 @@ const WARM = "#f3f0eb";
 
 const CARD_BASE = "flex h-full flex-col rounded-[var(--radius-lg)] p-7 sm:p-9";
 const CARD_LINK =
-  " group no-underline shadow-none transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_-12px_rgba(9,10,12,0.55)] focus-visible:outline-solid focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#d7a975]";
-const CTA_BASE = "inline-flex h-12 items-center rounded-[var(--radius-md)] px-6 text-[0.95rem] font-semibold";
+  " group no-underline hover:no-underline focus:no-underline focus-visible:no-underline visited:no-underline shadow-none transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_-12px_rgba(9,10,12,0.55)] focus-visible:outline-solid focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#d7a975]";
+const CTA_BASE =
+  "inline-flex h-12 items-center rounded-[var(--radius-md)] px-6 text-[0.95rem] font-semibold no-underline hover:no-underline focus:no-underline focus-visible:no-underline visited:no-underline";
 const CTA_LINK =
-  " transition-[filter] duration-150 group-hover:brightness-110 group-hover:underline group-hover:underline-offset-4 group-focus-visible:brightness-110";
+  " transition-[filter] duration-150 group-hover:brightness-110 group-focus-visible:brightness-110";
 
 function EvidenceVaultCard() {
   const style = { background: NAVY, color: WARM, border: `1px solid ${TAN}` };
@@ -115,7 +116,7 @@ function VaultCardContent() {
         <span
           id="vault-cta"
           className={CTA_BASE + (VAULT_LIVE ? CTA_LINK : "")}
-          style={{ background: WINE, color: "#fbf8f1", border: `1px solid ${GOLD}` }}
+          style={{ background: WINE, color: "#fbf8f1", border: `1px solid ${GOLD}`, textDecoration: "none" }}
         >
           {VAULT_LIVE ? (
             <>
