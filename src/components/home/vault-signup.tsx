@@ -22,7 +22,7 @@ const CTA_LINK =
   " transition-[filter] duration-150 group-hover:brightness-110 group-hover:underline group-hover:underline-offset-4 group-focus-visible:brightness-110";
 
 function EvidenceVaultCard() {
-  const style = { background: NAVY, color: WARM };
+  const style = { background: NAVY, color: WARM, border: `1px solid ${TAN}` };
   const content = <VaultCardContent />;
   if (VAULT_LIVE) {
     return (
