@@ -84,3 +84,22 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Evidence Vault homepage card is one <a>; never underline any text inside it. */
+a.vault-card-link,
+a.vault-card-link:link,
+a.vault-card-link:visited,
+a.vault-card-link:hover,
+a.vault-card-link:focus,
+a.vault-card-link:focus-visible,
+a.vault-card-link:active,
+a.vault-card-link *,
+a.vault-card-link:link *,
+a.vault-card-link:visited *,
+a.vault-card-link:hover *,
+a.vault-card-link:focus *,
+a.vault-card-link:focus-visible *,
+a.vault-card-link:active * {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
