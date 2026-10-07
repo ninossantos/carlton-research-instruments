@@ -66,7 +66,7 @@ function VaultCardContent() {
       </p>
       <ul className="mt-5 grid gap-2 text-[0.95rem]" style={{ color: WARM }}>
         {[
-          "Each piece of your evidence is scanned for coercive control. Instant report.",
+          "Each piece of your evidence is scanned for coercive control. Receive comprehensive coercive control reports.",
           "Come back later and add more documents to your file. The Evidence Vault keeps it organized.",
           "Not a substitute for an expert analyst or attorney, but Evidence Vault provides deep insights for a fraction of the cost.",
         ].map((t) => (
