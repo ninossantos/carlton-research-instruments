@@ -6,6 +6,7 @@ const CONTACT = "https://carltonresearch.com/contact/";
 const practiceNav = [
   { href: "https://carltonresearch.com/", label: "Home" },
   { to: "/", label: "Coercive Control Observatory", current: true },
+  { href: "https://evidence.carltonresearch.com/", label: "Evidence Vault" },
   { href: "https://carltonresearch.com/services/", label: "Services" },
   { href: "https://carltonresearch.com/about/", label: "About" },
   { href: CONTACT, label: "Contact" },
