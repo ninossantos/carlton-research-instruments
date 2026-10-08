@@ -17,7 +17,7 @@ const nav = [
   { href: "https://tracker.carltonresearch.com/appeals", label: "Coercive Control Appeals Landscape" },
   { to: "/literature", label: "Coercive Control Literature Map" },
   { to: "/codebook", label: "Coercive Control Field Check" },
-  { to: "/trainer", label: "Coercive Control Drill" },
+  { to: "/trainer", label: "Drill" },
 ] as const;
 
 export function SiteHeader() {
@@ -94,7 +94,7 @@ export function SiteHeader() {
             </a>
           </div>
         </div>
-        <nav aria-label="Coercive Control Observatory" className="-mx-1 flex flex-wrap gap-1 pb-1 sm:flex-nowrap sm:overflow-x-auto">
+        <nav aria-label="Coercive Control Observatory" className="-mx-1 flex flex-wrap gap-1 pb-1">
           {nav.map((item) => {
             if ("href" in item) {
               return (
