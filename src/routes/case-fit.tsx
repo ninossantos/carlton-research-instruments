@@ -35,7 +35,7 @@ const recordOptions = [
   { id: "parenting-app", label: "OurFamilyWizard / TalkingParents / similar", family: "har" },
   { id: "location", label: "Location logs / device tracking", family: "sur" },
   { id: "accounts", label: "Shared accounts, passwords, spyware", family: "sur" },
-  { id: "financial", label: "Bank, credit, support, coerced debt", family: "eco" },
+  { id: "financial", label: "Bank, credit, support, coerced debt", family: "econ" },
   { id: "docket", label: "Docket / serial filings", family: "inst" },
   { id: "child", label: "Child used as messenger or monitor (in the record)", family: "chi" },
   { id: "po", label: "Protective or restraining order in force or alleged breached", family: "vpo" },

@@ -6,7 +6,7 @@ export const FAMILY_LABELS: Record<string, string> = {
   SUR: "Surveillance",
   DEG: "Degradation",
   REG: "Rules",
-  ECO: "Economic Control",
+  ECON: "Economic Control",
   THR: "Threats",
   GAS: "Gaslighting",
   SEXC: "Sexual Coercion",
@@ -17,6 +17,7 @@ export const FAMILY_LABELS: Record<string, string> = {
   HAR: "Harassment",
   PATH: "Pathologizing",
   VPO: "Protective Orders",
+  RES: "Target Response",
 };
 
 export function familyLabel(id: string): string {

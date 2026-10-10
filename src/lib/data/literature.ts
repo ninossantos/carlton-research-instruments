@@ -14,7 +14,7 @@ export const literature: Source[] = [
     year: 2007,
     kind: "foundational",
     why: "The core account of coercive control as a liberty crime: a course of conduct that subjugates, not a series of discrete assaults.",
-    families: ["ISO", "DEG", "REG", "ECO", "THR", "SEXC", "CHI"],
+    families: ["ISO", "DEG", "REG", "ECON", "THR", "SEXC", "CHI"],
   },
   {
     id: "stark-hester-2019",
@@ -30,7 +30,7 @@ export const literature: Source[] = [
     year: 1993,
     kind: "foundational",
     why: "The Power and Control Wheel: isolation, degradation, economic control, and intimidation as a regime, not an incident list.",
-    families: ["ISO", "DEG", "REG", "ECO", "THR"],
+    families: ["ISO", "DEG", "REG", "ECON", "THR"],
   },
   {
     id: "sweet-2019",
@@ -174,7 +174,7 @@ export const literature: Source[] = [
     year: 2021,
     kind: "legal",
     why: "Early U.S. family-law definition with a non-exhaustive tactic list, including digital and economic control.",
-    families: ["ISO", "SUR", "ECO", "INST"],
+    families: ["ISO", "SUR", "ECON", "INST"],
   },
   {
     id: "carlton-codebook",

@@ -39,7 +39,7 @@ function q(
 const raw: Omit<TrainerQuestion, "id">[] = [
   q(
     "ISO-1",
-    "Restricting or punishing contact with family and friends",
+    "Restricting or Punishing Contact with Family and Friends",
     "Why were you texting Dana? I told you she's poison. Delete her number. I don't want you around her.",
     [
       "Reasonable concern about a toxic friend",
@@ -50,7 +50,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "ISO-2",
-    "Controlling or gatekeeping communication channels",
+    "Controlling or Gatekeeping Communication Channels",
     "Delete Instagram tonight. I don't want you talking to people on there anymore. If I see the account still up, the phone goes.",
     [
       "Controlling or taking the target's communication channels, which is coercive control",
@@ -61,7 +61,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "ISO-3",
-    "Discrediting or sabotaging supporters",
+    "Discrediting or Sabotaging Supporters",
     "Your therapist is filling your head with garbage. She gets paid to make you think you're a victim.",
     [
       "A second opinion about the value of therapy",
@@ -72,7 +72,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "ISO-4",
-    "Restricting movement and physical access to the world",
+    "Restricting Movement and Physical Access to the World",
     "You don't need to go to that class. Everything you need is here. End of discussion.",
     [
       "Encouragement to spend more time at home",
@@ -83,7 +83,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SUR-1",
-    "Demanding accounting of whereabouts, time, and activities",
+    "Demanding Accounting of Whereabouts, Time, and Activities",
     "Send me a picture of where you are with today's date visible. Now.",
     [
       "Demanding an accounting of the target's whereabouts, which is coercive control",
@@ -94,7 +94,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SUR-2",
-    "Accessing or demanding access to devices, accounts, and passwords",
+    "Accessing or Demanding Access to Devices, Accounts, and Passwords",
     "I read your messages with Priya last night. Interesting how you talk about me. We'll discuss it when you're home.",
     [
       "Transparency in a committed relationship",
@@ -105,7 +105,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SUR-3",
-    "Stalking behaviors and engineered presence",
+    "Stalking Behaviors and Engineered Presence",
     "Hey, I see you walking down the street. Who's the man? Nice dress by the way.",
     [
       "A compliment about clothing",
@@ -116,7 +116,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "DEG-1",
-    "Insults and name-calling",
+    "Insults and Name-calling",
     "You are honestly the most useless person I've ever met. Ivan the Terrible!",
     [
       "Insults and name-calling, which is coercive control",
@@ -127,7 +127,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "DEG-2",
-    "Humiliation and shaming",
+    "Humiliation and Shaming",
     "Hey Linda, have you had plastic surgery? Did you get your nose done? Don't you guys think it looks like she's had plastic surgery?",
     [
       "Blunt humor among friends",
@@ -138,7 +138,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "DEG-3",
-    "Attacks on competence in valued roles",
+    "Attacks on Competence in Valued Roles",
     "A real parent would never have let that happen. You're not fit for this.",
     [
       "Honest feedback after a parenting mistake",
@@ -149,7 +149,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "DEG-4",
-    "Body and sexual shaming",
+    "Body and Sexual Shaming",
     "No one else would ever want you. Look at yourself.",
     [
       "Body and sexual shaming, which is coercive control",
@@ -160,7 +160,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REG-1",
-    "Rules about appearance, dress, and presentation",
+    "Rules About Appearance, Dress, and Presentation",
     "You're not leaving the house in that. Change.",
     [
       "A fashion opinion between partners",
@@ -171,7 +171,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REG-1",
-    "Rules about appearance, dress, and presentation",
+    "Rules About Appearance, Dress, and Presentation",
     "Cover your face or suffer the consequences.",
     [
       "A rule about the target's presentation, which is coercive control",
@@ -182,7 +182,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REG-1",
-    "Rules about appearance, dress, and presentation",
+    "Rules About Appearance, Dress, and Presentation",
     "I won't be seen with you looking like that.",
     [
       "A preference about dressing for an event",
@@ -193,7 +193,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REG-1",
-    "Rules about appearance, dress, and presentation",
+    "Rules About Appearance, Dress, and Presentation",
     "Show a little more nipple. We need to capture the media's attention tonight.",
     [
       "Career coaching for public life",
@@ -204,7 +204,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REG-2",
-    "Rules about food, sleep, and bodily care",
+    "Rules About Food, Sleep, and Bodily Care",
     "No carbs. I already made the meal plan. You'll thank me when you look better.",
     [
       "A rule about the target's food and body, which is coercive control",
@@ -215,7 +215,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REG-3",
-    "Rules about housework and domestic labor",
+    "Rules About Housework and Domestic Labor",
     "The house gets cleaned on Fridays before I get home.",
     [
       "A shared chore schedule",
@@ -226,7 +226,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REG-4",
-    "Rule enforcement and punishment rituals",
+    "Rule Enforcement and Punishment Rituals",
     "You cannot attend our child's football games because the orders clearly state you cannot attend parent-teacher conferences, and this is the same thing.",
     [
       "Accurate reading of a court order",
@@ -236,8 +236,8 @@ const raw: Omit<TrainerQuestion, "id">[] = [
     2,
   ),
   q(
-    "ECO-1",
-    "Controlling access to money and financial information",
+    "ECON-1",
+    "Controlling Access to Money and Financial Information",
     "I'm going to control the finances. You can have a budget for groceries, but anything else, just tell me and I'll handle it.",
     [
       "Controlling the target's access to money, which is coercive control",
@@ -247,8 +247,8 @@ const raw: Omit<TrainerQuestion, "id">[] = [
     0,
   ),
   q(
-    "ECO-2",
-    "Economic exploitation, unauthorized use of joint resources, and coerced debt",
+    "ECON-2",
+    "Economic Exploitation, Unauthorized Use of Joint Resources, and Coerced Debt",
     "Why are you always asking what happened to the money in our account? I used it for a few things I needed. You don't need to worry about it.",
     [
       "Ordinary use of a joint account",
@@ -258,8 +258,8 @@ const raw: Omit<TrainerQuestion, "id">[] = [
     1,
   ),
   q(
-    "ECO-3",
-    "Employment and education sabotage",
+    "ECON-3",
+    "Employment and Education Sabotage",
     "You only went back to college so you can meet more men. You don't need more money. I provide enough.",
     [
       "Concern about a partner's motives",
@@ -269,8 +269,8 @@ const raw: Omit<TrainerQuestion, "id">[] = [
     2,
   ),
   q(
-    "ECO-4",
-    "Coercing debt, forcing asset surrender, and destroying resources",
+    "ECON-4",
+    "Coercing Debt, Forcing Asset Surrender, and Destroying Resources",
     "Sign the loan papers today. I need it to start a new business. Don't make this difficult.",
     [
       "Coercing the target into debt, which is coercive control",
@@ -281,7 +281,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "THR-1",
-    "Threats to harm or kill the target",
+    "Threats to Harm or Kill the Target",
     "If you leave, I'll make sure you never get a chance to do it again.",
     [
       "A heated remark during a breakup",
@@ -292,7 +292,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "THR-2",
-    "Threats involving children, family, pets, or others",
+    "Threats Involving Children, Family, Pets, or Others",
     "If you keep pushing this, the kids will pay for it.",
     [
       "A warning about the stress of conflict on children",
@@ -303,7 +303,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "THR-3",
-    "Threats of self-harm or suicide used as control",
+    "Threats of Self-harm or Suicide Used as Control",
     "If you walk out that door, I won't be alive when you get back. It will be on you.",
     [
       "A threat of suicide used to stop the target from leaving, which is coercive control",
@@ -314,7 +314,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "THR-4",
-    "Intimidation through displays of force, property destruction, or implied presence",
+    "Intimidation Through Displays of Force, Property Destruction, or Implied Presence",
     "Would be a shame if this gun went off by accident.",
     [
       "Careless talk about a firearm",
@@ -325,7 +325,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "THR-4",
-    "Intimidation through displays of force, property destruction, or implied presence",
+    "Intimidation Through Displays of Force, Property Destruction, or Implied Presence",
     "Oops, looks like I broke your sliding glass door. Guess your dog can't keep me out after all.",
     [
       "An accident during an argument",
@@ -336,7 +336,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "THR-5",
-    "Veiled, conditional, and coded threats",
+    "Veiled, Conditional, and Coded Threats",
     "Remember the lake house? It would be a shame if the same happened to you.",
     [
       "A veiled threat pointing back to prior harm, which is coercive control",
@@ -347,7 +347,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "THR-6",
-    "Non-verbal weapon intimidation",
+    "Non-verbal Weapon Intimidation",
     "Just cleaned the 9mm. Made me think of you, actually.",
     [
       "Small talk about a hobby",
@@ -358,7 +358,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "GAS-1",
-    "Reality distortion, denial and rewriting of events",
+    "Reality Distortion, Denial and Rewriting of Events",
     "I never said that. You're inventing things again.",
     [
       "A genuine disagreement about memory",
@@ -369,7 +369,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "GAS-2",
-    "Mobilizing stereotypes and structural vulnerability",
+    "Mobilizing Stereotypes and Structural Vulnerability",
     "Go ahead, call the cops. Who do you think they'll believe, me, or the one with the mental record?",
     [
       "Mobilizing the target's structural vulnerability, which is coercive control",
@@ -380,7 +380,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "GAS-3",
-    "Blame reversal (DARVO)",
+    "Blame Reversal (DARVO)",
     "After everything I put up with from you, YOU'RE accusing ME? I should be the one recording these conversations.",
     [
       "Self-defense after a false accusation",
@@ -391,7 +391,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "GAS-3",
-    "Blame reversal (DARVO)",
+    "Blame Reversal (DARVO)",
     "You always play the victim; you have a victim mentality.",
     [
       "Feedback about communication style",
@@ -402,7 +402,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SEXC-1",
-    "Pressure, guilt, and entitlement claims regarding sex",
+    "Pressure, Guilt, and Entitlement Claims Regarding Sex",
     "A wife who loved her husband wouldn't keep score like this. After everything I do for you, this is the least you can give.",
     [
       "Pressure and entitlement used to demand sex, which is coercive control",
@@ -413,7 +413,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SEXC-2",
-    "Punishment or retaliation for refusal",
+    "Punishment or Retaliation for Refusal",
     "Since apparently I disgust you, don't expect me at your mother's thing on Sunday.",
     [
       "Hurt feelings after rejection",
@@ -424,7 +424,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SEXC-3",
-    "Reproductive coercion",
+    "Reproductive Coercion",
     "You don't need to refill the birth control pills. We're having another one, that's final.",
     [
       "A discussion about family size",
@@ -435,7 +435,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SEXC-3",
-    "Reproductive coercion",
+    "Reproductive Coercion",
     "Have an abortion or I am leaving you.",
     [
       "Reproductive coercion, which is coercive control",
@@ -446,7 +446,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SEXC-4",
-    "Deception for sexual access",
+    "Deception for Sexual Access",
     "A man represents himself as single, available, and committed to a shared future in order to secure sexual and emotional access, while simultaneously maintaining other partners and harboring no intention of the promised relationship.",
     [
       "Dating more than one person before exclusivity",
@@ -458,7 +458,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SEXC-5",
-    "Triangulation as sexual and relational control",
+    "Triangulation as Sexual and Relational Control",
     "The abuser maintains highly attentive public exchanges with another woman, posts about her gifts and admiration, then labels the same woman \"crazy\" when confronted, while accusing the primary partner of \"trespassing boundaries\" and \"disrespecting his space\" for noticing the pattern.",
     [
       "A public friendship that the partner misread",
@@ -470,7 +470,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "SEXC-6",
-    "Coercion into multi-partner or third-party sexual activity",
+    "Coercion Into Multi-partner or Third-party Sexual Activity",
     "If you loved me you'd have sex with your friend and let me watch. Other women do it for their men. It'll strengthen our relationship. If you won't, maybe we're not as solid as I thought.",
     [
       "Coercion into third-party sexual activity, which is coercive control",
@@ -481,7 +481,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "CHI-1",
-    "Undermining the target's parenting",
+    "Undermining the Target's Parenting",
     "I told them the truth, that mommy chose her job over them.",
     [
       "A parent being responsible by telling a child the truth about the mother",
@@ -492,7 +492,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "CHI-1",
-    "Undermining the target's parenting",
+    "Undermining the Target's Parenting",
     "Oh Georgey, little buddy, you hit your mom again? Want some ice cream?",
     [
       "A parent teaching a child not to hit",
@@ -503,7 +503,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "CHI-2",
-    "Using children as monitors, messengers, or leverage",
+    "Using Children as Monitors, Messengers, or Leverage",
     "Emma told me someone was at your house Tuesday. I need to know who it is, as this is obviously a critical issue involving her welfare.",
     [
       "Using a child as a monitor of the target, which is coercive control",
@@ -514,7 +514,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "CHI-3",
-    "Custody and child-welfare threats as ongoing control",
+    "Custody and Child-welfare Threats as Ongoing Control",
     "My lawyer says judges love mothers who miss exchanges. Keep it up.",
     [
       "Legal information about custody procedure",
@@ -525,7 +525,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "CHI-4",
-    "Obstructing joint decision-making",
+    "Obstructing Joint Decision-making",
     "I hear you on the specialist's recommendation, but before we move forward, can you send me her records again? I think we should get a 4th opinion.",
     [
       "Diligent co-parenting on a medical decision",
@@ -536,7 +536,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "CHI-5",
-    "Gatekeeping access to the child's providers, records, and information",
+    "Gatekeeping Access to the Child's Providers, Records, and Information",
     "Going forward, all communication with the children's teachers need to come through me. I've already let the admin office know that I am the point of contact, not you.",
     [
       "Gatekeeping the target's access to the child's school, which is coercive control",
@@ -547,7 +547,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "INST-1",
-    "Threats or references to deploying authorities against the target",
+    "Threats or References to Deploying Authorities Against the Target",
     "One call to CPS about your drinking and everything changes.",
     [
       "A mandated reporter stating a legal duty",
@@ -558,7 +558,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "INST-2",
-    "Vexatious or strategic litigation references",
+    "Vexatious or Strategic Litigation References",
     "Keep this up and see how it looks to the judge when I bring six months of messages like this one.",
     [
       "Preparation of a court record",
@@ -569,7 +569,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "INST-3",
-    "Manipulating third-party professionals and audiences",
+    "Manipulating Third-party Professionals and Audiences",
     "I wrote the therapist and told him you have a mental problem. He loves me by the way, I sent him tickets to the game on Friday.",
     [
       "Manipulating a third-party professional and the target's standing, which is coercive control",
@@ -580,7 +580,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "INST-4",
-    "Immigration document withholding and application interference",
+    "Immigration Document Withholding and Application Interference",
     "I already called the lawyer to pull your petition. Good luck explaining that to ICE.",
     [
       "A change of mind about sponsoring a petition",
@@ -591,7 +591,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "INST-5",
-    "Constructing the target as non-credible",
+    "Constructing the Target as Non-credible",
     "You literally cannot believe anything she says.",
     [
       "A party stating a credibility concern to a professional",
@@ -602,7 +602,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REC-1",
-    "Apology and promise-to-change messages following coded incidents",
+    "Apology and Promise-to-Change Following Coded Incidents",
     "Look, I know I was out of control last night. Never again. You're my whole world.",
     [
       "An apology and promise to change used to reset control, which is coercive control",
@@ -613,7 +613,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REC-2",
-    "Weaponized affection and love-bombing",
+    "Weaponized Affection and Love-bombing",
     "Since the day I met you two weeks ago, our connection is even beyond ourselves. I love you and I cherish and relish all of your being.",
     [
       "Early-relationship affection",
@@ -624,7 +624,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "REC-3",
-    "Conditional affection and probation framing",
+    "Conditional Affection and Probation Framing",
     "Things have been so good these two weeks because you've been good. Let's keep it that way.",
     [
       "Praise for a better stretch in the relationship",
@@ -635,7 +635,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "CRIM-1",
-    "Coerced participation in crime",
+    "Coerced Participation in Crime",
     "You carried the drugs, not me. One call and you are the one they arrest. You will never see the children again.",
     [
       "Coerced participation in crime, which is coercive control",
@@ -646,7 +646,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "CRIM-2",
-    "Forced participation in, or concealment of, harm to children",
+    "Forced Participation in, or Concealment of, Harm to Children",
     "If you take her to the hospital they will ask questions. You already have a record. Keep your mouth shut or they will take her.",
     [
       "Fear of an unfair child-welfare system",
@@ -657,7 +657,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "HAR-1",
-    "Communication flooding",
+    "Communication Flooding",
     "This is the 6th time I've asked: What is happening at your house? I have a right to know for the children's sake.",
     [
       "A co-parent asking about the children's safety",
@@ -668,7 +668,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "HAR-2",
-    "Social media attack campaigns and public online humiliation",
+    "Social Media Attack Campaigns and Public Online Humiliation",
     "She abandoned the children for her own agenda. Here's the proof.",
     [
       "A public social-media attack on the target, which is coercive control",
@@ -679,7 +679,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "HAR-3",
-    "Non-consensual distribution or threat of private or intimate images",
+    "Non-consensual Distribution or Threat of Private or Intimate Images",
     "I posted that picture of you in your bra and panties online. Everyone loves it. Hope you don't mind.",
     [
       "Pointing out public information",
@@ -690,7 +690,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "HAR-3",
-    "Non-consensual distribution or threat of private or intimate images",
+    "Non-consensual Distribution or Threat of Private or Intimate Images",
     "I still have those photos from last year. It would be a shame if your workplace or the kids' school saw them.",
     [
       "A reminder that old photos exist",
@@ -701,7 +701,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "HAR-4",
-    "Unwanted physical presence and location-based intrusion",
+    "Unwanted Physical Presence and Location-based Intrusion",
     "I watched you leaving work last night. You weren't headed home. You should wear red more often, though.",
     [
       "Unwanted physical presence at the target's workplace, which is coercive control",
@@ -712,7 +712,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "HAR-5",
-    "Third-party and proxy harassment",
+    "Third-party and Proxy Harassment",
     "I called your sister and let her know you lied to me. She told me you were out late. Interesting that you didn't mention that.",
     [
       "Reaching out to family for the truth",
@@ -723,7 +723,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "HAR-6",
-    "Other intentional disturbance of peace",
+    "Other Intentional Disturbance of Peace",
     "A series of small, timed interferences (unsolicited packages, account notifications triggered remotely, and brief appearance near a regular route) that together keep the target in a state of anticipatory tension.",
     [
       "Unrelated coincidences in a small town",
@@ -735,7 +735,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "PATH-1",
-    "Mental-health weaponization directed at the target",
+    "Mental-health Weaponization Directed at the Target",
     "You're having another episode. You're inventing abuse again. No one can deal with you when you're like this.",
     [
       "Weaponizing the target's mental-health history, which is coercive control",
@@ -746,7 +746,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "PATH-2",
-    "Pathologizing the target to third parties",
+    "Pathologizing the Target to Third Parties",
     "She's been unstable for years. She tried to commit suicide and her own father sued her. Anything she tells you about me comes from that place. I'm the one keeping things calm.",
     [
       "Background a professional needs in order to assess credibility",
@@ -757,7 +757,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "VPO-1",
-    "Outright violation of a protective or restraining order",
+    "Outright Violation of a Protective or Restraining Order",
     "The order prohibits all contact. The abuser calls and/or sends repeated messages, appears at the target's home or workplace, or uses a third party to deliver communications.",
     [
       "An attempt to co-parent after an order issues",
@@ -769,7 +769,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "VPO-2",
-    "Marginal or technical compliance that violates the spirit of the order",
+    "Marginal or Technical Compliance That Violates the Spirit of the Order",
     "As always, I am concerned about our daughter's diet. She told me that you never feed her. Again, I only raise this issue because your neglect is a serious concern. Let me know if you want to discuss.",
     [
       "Contact framed as concern for a child, but intended to denigrate the target and compel a response, which is coercive control",

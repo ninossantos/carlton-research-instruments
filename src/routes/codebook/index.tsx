@@ -26,7 +26,7 @@ function Codebook() {
     <main className="mx-auto w-full max-w-3xl px-5 py-10 sm:px-8">
       <h1 className="font-display text-4xl tracking-tight sm:text-5xl">{CODEBOOK_TITLE}</h1>
       <p className="mt-4 text-lg leading-relaxed text-muted">
-        59 behaviors in 15 families, drawn from{" "}
+        68 behaviors in 15 families, drawn from{" "}
         <em>The Codebook for Identifying Coercive Control in Longitudinal Artifacts</em>. A
         behavioral match does not constitute a pattern as defined by law.
       </p>

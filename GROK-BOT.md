@@ -44,11 +44,11 @@ Placeholder iframe (swap the `src` if the host differs):
 
 ## Do not publish
 
-- PRO, RES, UNCODED
-- Include, Exclude, Coding Note
+- PRO, tactics
+- Include, Exclude, tactics Note
 - Any upload of a file, screenshot, export, or document
 - Any child name
-- Coding-manual teaching copy
+- tactics-manual teaching copy
 - Part III, Version, or codebook catalog language on the public surface
 
 ## Copy rules already in the app

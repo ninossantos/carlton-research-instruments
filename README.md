@@ -18,9 +18,9 @@ Five public instruments:
 | `/codebook` | Is it coercive control? |
 | `/trainer` | Test Your Knowledge |
 
-The codebook pages publish 59 behaviors in 15 families, drawn from *The Codebook for Identifying Coercive Control in Longitudinal Artifacts*. A behavioral match does not constitute a pattern as defined by law.
+The codebook pages publish 68 behaviors in 15 families, drawn from *The Codebook for Identifying Coercive Control in Longitudinal Artifacts*. A behavioral match does not constitute a pattern as defined by law.
 
-PRO, RES, and UNCODED stay exclusive to the codebook. Include, Exclude, and Coding Note are not published. The site has no upload.
+PRO and tactics stay exclusive to the codebook. Include, Exclude, and tactics Note are not published. The site has no upload.
 
 ## Firm menu
 
