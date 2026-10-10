@@ -17,7 +17,7 @@ const secondaryNav = [
 const GOLD_STANDARD_TAGLINE =
   "Carlton Research Set the Gold Standard for Evaluating Coercive Control";
 
-function GoldStandardTagline() {
+export function GoldStandardTagline() {
   return (
     <p className="gold-standard-tagline" aria-label={GOLD_STANDARD_TAGLINE}>
       <span className="gold-standard-tagline__kicker">Carlton Research Set</span>

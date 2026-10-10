@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CiteBlock } from "@/components/cite-block";
 import { VaultSignupSection } from "@/components/home/vault-signup";
+import { GoldStandardTagline } from "@/components/site-footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -92,6 +93,8 @@ function Home() {
           </p>
         </div>
       </section>
+
+      <GoldStandardTagline />
 
       <section className="bg-surface">
         <div className="mx-auto max-w-6xl px-5 pt-10 sm:px-8">
