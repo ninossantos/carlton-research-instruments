@@ -14,23 +14,9 @@ const secondaryNav = [
   { href: "https://carltonresearch.com/copyright-notice/", label: "Copyright Notice" },
 ];
 
-const GOLD_STANDARD_TAGLINE =
-  "Carlton Research Set the Gold Standard for Evaluating Coercive Control";
-
-function GoldStandardTagline() {
-  return (
-    <p className="gold-standard-tagline" aria-label={GOLD_STANDARD_TAGLINE}>
-      <span className="gold-standard-tagline__kicker">Carlton Research Set</span>
-      <span className="gold-standard-tagline__mark">the Gold Standard</span>
-      <span className="gold-standard-tagline__sub">for Evaluating Coercive Control</span>
-    </p>
-  );
-}
-
 export function SiteFooter() {
   return (
     <footer className="mt-auto bg-bg">
-      <GoldStandardTagline />
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 sm:px-8">
         {/* Footer-one: brand + main nav (matches WP top footer) */}
         <p className="flex items-center gap-[0.65rem] font-display text-lg text-fg">
