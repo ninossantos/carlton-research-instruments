@@ -676,7 +676,7 @@ export const categories: Category[] = [
         example: "The abuser appears outside the target's workplace at closing time and later texts, \"Nice to see you leaving. You should smile more.",
         citation: "Stark 2007; Toews & Bermea 2017; Woodlock 2017.",
       }),
-      sc("HAR", 5, "Third-party and Proxy Harassment", {
+      sc("HAR", 5, "Third-Party and Proxy Harassment", {
         definition: "Contacting, following, questioning, or recruiting friends, family members, coworkers, neighbors, or other third parties to obtain information about the target, deliver messages, monitor activities, or apply pressure, thereby extending the control regime through the target's support network.",
         how: "Calls or messages to the target's workplace, coworkers, family, or friends seeking personal information, making allegations, to establish \"my side of the story,\" or to gain the favor of. Instructing or encouraging third parties to report on the target's movements or contacts. Using children or mutual acquaintances as intermediaries for unwanted contact or information-gathering.",
         function: "Isolate the target, assert power and control, gain attention, generate secondary surveillance, and make the social environment itself a site of intrusion.",

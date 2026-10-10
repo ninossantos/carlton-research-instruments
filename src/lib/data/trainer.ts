@@ -712,7 +712,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
   ),
   q(
     "HAR-5",
-    "Third-party and Proxy Harassment",
+    "Third-Party and Proxy Harassment",
     "I called your sister and let her know you lied to me. She told me you were out late. Interesting that you didn't mention that.",
     [
       "Reaching out to family for the truth",
