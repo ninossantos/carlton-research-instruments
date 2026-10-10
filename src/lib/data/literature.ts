@@ -181,7 +181,7 @@ export const literature: Source[] = [
     cite: "Carlton, C. (2026). Coercive Control Field Check. Carlton Research, LLC.",
     year: 2026,
     kind: "method",
-    why: "The public behavior tree: 15 families. A described behavior is not a pattern.",
+    why: "The public behavior tree: 16 families. A described behavior is not a pattern.",
   },
 ];
 
