@@ -229,7 +229,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
     "Rule Enforcement and Punishment Rituals",
     "You cannot attend our child's football games because the orders clearly state you cannot attend parent-teacher conferences, and this is the same thing.",
     [
-      "Accurate reading of a court order",
+      "Accurate analysis of a court order",
       "A parent trying to stay on the safe side of an order",
       "Punishing the target by stretching a rule past its terms, which is coercive control",
     ],
@@ -461,7 +461,7 @@ const raw: Omit<TrainerQuestion, "id">[] = [
     "Triangulation as Sexual and Relational Control",
     "The abuser maintains highly attentive public exchanges with another woman, posts about her gifts and admiration, then labels the same woman \"crazy\" when confronted, while accusing the primary partner of \"trespassing boundaries\" and \"disrespecting his space\" for noticing the pattern.",
     [
-      "A public friendship that the partner misread",
+      "A public friendship that the partner's analysis got wrong",
       "Flirting that the other partner took too seriously",
       "Triangulation as sexual and relational control, which is coercive control",
     ],

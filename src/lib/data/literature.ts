@@ -109,7 +109,7 @@ export const literature: Source[] = [
     cite: "Dutton, M. A., & Goodman, L. A. (2005). Coercion in intimate partner violence: Toward a new conceptualization. Sex Roles, 52(11-12), 743-756.",
     year: 2005,
     kind: "foundational",
-    why: "Coercion as a demand plus a credible threat. Useful when reading function, not tone.",
+    why: "Coercion as a demand plus a credible threat. Useful when the analysis is of function, not tone.",
     families: ["THR", "REG"],
   },
   {

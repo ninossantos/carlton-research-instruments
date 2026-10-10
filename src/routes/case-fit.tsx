@@ -252,7 +252,7 @@ function CaseFit() {
             <div className="mt-8">
               <h3 className="font-display text-xl">Families that could even be in play</h3>
               <p className="mt-2 text-sm text-muted">
-                From the record types you checked, not a reading of any file.
+                From the record types you checked, not an analysis of any file.
               </p>
               <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">
                 {familiesInPlay.map((f) => (

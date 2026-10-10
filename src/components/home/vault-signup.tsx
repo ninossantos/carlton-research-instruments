@@ -68,7 +68,7 @@ function VaultCardContent() {
         {[
           "Each piece of your evidence is scanned for coercive control. Receive comprehensive coercive control reports.",
           "Come back later and add more documents to your file. The Evidence Vault keeps it organized.",
-          "Not a substitute for an expert analyst or attorney, but Evidence Vault provides deep insights for a fraction of the cost.",
+          "Not a substitute for an expert analyst or attorney, but Evidence Vault provides findings for a fraction of the cost.",
         ].map((t) => (
           <li key={t} className="flex items-start gap-3">
             <span
