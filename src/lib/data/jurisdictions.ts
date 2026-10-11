@@ -2,7 +2,7 @@ import type { Confidence, Jurisdiction, Recognition } from "./types";
 
 const REVIEW = "August 31, 2026";
 const FORUM =
-  "Carlton Research can speak to pattern analysis (coercive control breadth, depth, escalation, entrapment, and more). The research instrument meets the Federal Rule 702 / Daubert evidentiary standards. Carlton Research does not recommend parenting time or custody. Research establishes whether a pattern of coercive control is present. Inquire about specific testimony requests or speaking engagements.";
+  "Carlton Research can speak to pattern analysis (coercive control breadth, depth, escalation, entrapment, and more). Research is built to the evidentiary rules of the jurisdiction that will hear it. Carlton Research does not recommend parenting time or custody. Research establishes whether a pattern of coercive control is present. Inquire about specific testimony requests or speaking engagements.";
 const EXPERT =
   "Confirm the forum's reliability standard (Daubert, Frye, Sargon, or the local equivalent).";
 
