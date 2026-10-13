@@ -6,7 +6,6 @@ const CONTACT = "https://carltonresearch.com/contact/";
 const practiceNav = [
   { href: "https://carltonresearch.com/", label: "Home" },
   { to: "/", label: "Coercive Control Observatory", current: true },
-  { href: "https://evidence.carltonresearch.com/", label: "Evidence Vault" },
   { href: "https://carltonresearch.com/services/", label: "Services" },
   { href: "https://carltonresearch.com/about/", label: "About" },
   { href: "https://speaking.carltonresearch.com/", label: "Lunch & Learn" },
@@ -20,6 +19,7 @@ const nav = [
   { to: "/literature", label: "Coercive Control Literature Map" },
   { to: "/codebook", label: "Coercive Control Field Check" },
   { to: "/trainer", label: "Drill" },
+  { href: "https://evidence.carltonresearch.com/", label: "Evidence Vault" },
 ] as const;
 
 export function SiteHeader() {
