@@ -9,6 +9,7 @@ const practiceNav = [
   { href: "https://evidence.carltonresearch.com/", label: "Evidence Vault" },
   { href: "https://carltonresearch.com/services/", label: "Services" },
   { href: "https://carltonresearch.com/about/", label: "About" },
+  { href: "https://speaking.carltonresearch.com/", label: "Lunch & Learn" },
   { href: CONTACT, label: "Contact" },
 ] as const;
 
